@@ -7,12 +7,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserratLight: ["MontserratLight"],
+        montserratRegular: ["MontserratRegular"],
+      },
       colors: {
-        yellow: "#FFD700",
+        flashYellow: "#FFD700",
+        sunshineYellow: "#FFFF00",
         turquoise: "#00CED1",
         red: "#FF0000",
+        skyBlue: "#87CEEB",
         limeGreen: "#32CD32",
         hotPink: "#FF69B4",
+        greenApple: "#7FFF00",
         pastelBlue: "#B0E0E6",
         mintGreen: "#98FB98",
         peach: "#FFDAB9",
