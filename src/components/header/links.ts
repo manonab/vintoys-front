@@ -21,12 +21,8 @@ export const headerLinks = (): menuLinks[] => {
      label: `about`
    },
    {
-     href: `/account`,
-     label: `account`
-   },
-   {
-     href: `/contact`,
-     label: `contact`
+     href: `/Login`,
+     label: `login`
    },
   ];
 };

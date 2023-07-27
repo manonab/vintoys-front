@@ -11,4 +11,8 @@
     font-family: 'MontserratRegular';
     src: url('/static/assets/fonts/Montserrat-Regular.ttf') format('truetype');
   }
+  @font-face {
+    font-family: 'MontserratSemiBold';
+    src: url('/static/assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+  }
 }

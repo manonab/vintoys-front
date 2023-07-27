@@ -6,4 +6,5 @@ export interface user{
      password: string;
      yearOfBirth: string;
      isConnected: boolean;
+     location: string;
 }

@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./src/*/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,8 +11,10 @@ module.exports = {
       fontFamily: {
         montserratLight: ["MontserratLight"],
         montserratRegular: ["MontserratRegular"],
+        montserratSemiBold: ["MontserratSemiBold"],
       },
       colors: {
+        vinToys: "#333333",
         flashYellow: "#FFD700",
         sunshineYellow: "#FFFF00",
         turquoise: "#00CED1",
@@ -24,17 +27,33 @@ module.exports = {
         mintGreen: "#98FB98",
         peach: "#FFDAB9",
         lavender: "#E6E6FA",
+        lavenderDarken: "#D8D8F5",
         lightSalmon: "#FFA07A",
         orange: "#FFA500",
         green: "#00FF00",
         blue: "#0000FF",
         indigo: "#4B0082",
         violet: "#800080",
+        white: "#FFFFFF",
+        silver: "#D3D3D3",
+      },
+      fontSize: {
+        XXL: "6.8rem",
+        ExtraLarge: "6rem",
+        MediumLarge: "5.4rem",
+        XLarge: "4.2rem",
+        Large: "3.5rem",
+        Big: "2.3rem",
+        Medium: "1.8rem",
+        Small: "1.6rem",
+        XSMall: "1.3rem",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "hero-pattern": "url('/static/assets/why-play-is-importantnarrow.jpg')",
+        "illustration-jouets": "url('/static/assets/illustration-jouets.jpg')",
       },
     },
   },

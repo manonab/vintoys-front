@@ -1,11 +1,11 @@
 import React from "react";
 
-const Account = () => {
+const Games = () => {
   return (
     <div>
-      <p>Account</p>
+      <p>Games</p>
     </div>
   );
 };
 
-export default Account;
+export default Games;

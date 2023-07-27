@@ -10,10 +10,6 @@ export const useGetAds = () => {
     url => fetcher(url),
   );
 
-  // Logging to check API response
-  console.log("Data:", data);
-  console.log("Error:", error);
-
   return {
     ads: data,
     isLoading: !error && !data,
