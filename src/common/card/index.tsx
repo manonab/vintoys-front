@@ -14,9 +14,15 @@ const AdsCards: React.FC<Ad> = ({
   id,
   thumbnail_url,
   time_ago,
+  category,
 }: Ad) => {
   const router = useRouter();
 
+  const handleViewDetails = () => {
+    if (id !== undefined) {
+      router.push(`/ads/${id}`);
+    }
+  };
   return (
     <Container className="flex flex-wrap flex-col border border-lavender my-2 rounded bg-white  shadow-lg p-4 w-64 rounded-2xl">
       <img
@@ -64,9 +70,7 @@ const AdsCards: React.FC<Ad> = ({
         className="mb-4 text-sm"
         lineHeight={LineHeight.Inter}
       />
-      {id !== undefined && (
-        <Button text="View Details" onClick={() => router.push(`/toys/${id}`)} />
-      )}
+      {id !== undefined && <Button text="View Details" onClick={handleViewDetails} />}
     </Container>
   );
 };

@@ -9,19 +9,19 @@ export interface menuLinks {
 export const headerLinks = (): menuLinks[] => {
   return [
     {
-     href: `/toys`,
-     label: `toys`
+     href: `/vintage`,
+     label: `vintage`
    },
    {
-     href: `/games`,
-     label: `games`
+     href: `/toys&games`,
+     label: `toys&games`
    },
    {
      href: `/about`,
      label: `about`
    },
    {
-     href: `/Login`,
+     href: `/account`,
      label: `login`
    },
   ];
