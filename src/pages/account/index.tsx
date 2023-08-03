@@ -1,14 +1,16 @@
 import React from "react";
 import { useAuth } from "@context/auth-context";
+import UserAccount from "@components/account";
+import SignIn from "./sign-in";
 
 const Account = () => {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
-    return <div>Loading...</div>; // Or redirect to login page
+    return <SignIn />;
   }
 
-  return <div>Account</div>; // This is just a placeholder. You can render the actual account content here.
+  return <UserAccount />;
 };
 
 export default Account;

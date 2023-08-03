@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="27px" viewBox="0 0 25 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Compte-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Fiche-logement" transform="translate(-511.000000, -1410.000000)" fill="#101923" stroke="#FFFFFF">
+            <g id="Group-3" transform="translate(512.000000, 1410.000000)">
+                <g id="Group-40" transform="translate(0.000000, 1.000000)">
+                    <circle id="Oval" stroke-width="0.9" transform="translate(8.864953, 5.728500) rotate(-9.217000) translate(-8.864953, -5.728500) " cx="8.864953" cy="5.7285" r="4.8285"></circle>
+                    <path d="M8.8299,10.8745169 C5.34902907,10.8745169 2.07381947,12.5230532 0,15.3187169 C1.81307767,18.483933 5.18173237,20.4364912 8.82945,20.4364912 C12.4771676,20.4364912 15.8458223,18.483933 17.6589,15.3187169 C15.5852694,12.5233077 12.310454,10.8748839 8.8299,10.8745169 Z" id="Path" stroke-width="1.35"></path>
+                    <circle id="Oval" stroke-width="0.9" transform="translate(14.264953, 10.228500) rotate(-9.217000) translate(-14.264953, -10.228500) " cx="14.264953" cy="10.2285" r="4.8285"></circle>
+                    <path d="M14.2299,15.3745169 C10.7490291,15.3745169 7.47381947,17.0230532 5.4,19.8187169 C7.21307767,22.983933 10.5817324,24.9364912 14.22945,24.9364912 C17.8771676,24.9364912 21.2458223,22.983933 23.0589,19.8187169 C20.9852694,17.0233077 17.710454,15.3748839 14.2299,15.3745169 Z" id="Path" stroke-width="1.35"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

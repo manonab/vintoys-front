@@ -5,9 +5,15 @@ interface Props {
   children: ReactNode;
   href: string;
   onClick?: () => void;
+  className?: string;
 }
 
-const Link: FunctionComponent<Props> = ({ children, href, onClick }: Props) => {
+const Link: FunctionComponent<Props> = ({
+  children,
+  href,
+  onClick,
+  className,
+}: Props) => {
   const router = useRouter();
 
   const handleClick = (e: any) => {
@@ -20,7 +26,7 @@ const Link: FunctionComponent<Props> = ({ children, href, onClick }: Props) => {
 
   return (
     <>
-      <a onClick={handleClick} href={href}>
+      <a onClick={handleClick} href={href} className={className}>
         {children}
       </a>
     </>

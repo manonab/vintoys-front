@@ -3,12 +3,11 @@ import React, { useState } from "react";
 import Form from "@common/form";
 import { useAuth } from "@context/auth-context";
 import { useSignIn } from "@hooks/use-signin";
-import { AuthPayload } from "@models/auth";
 import { useRouter } from "next/router";
 
 const SignIn = () => {
   const { updateAuthentication } = useAuth();
-  const { isLoading, error, signIn } = useSignIn();
+  const { signIn } = useSignIn();
   const router = useRouter();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");

@@ -4,7 +4,7 @@ import Title from "@common/title";
 
 const Banner = () => {
   return (
-    <div className="h-[450px] flex items-center justify-center bg-hero-pattern bg-cover bg-center">
+    <div className="h-[450px] flex items-center justify-center bg-game-time bg-cover bg-center">
       <div>
         <Title
           level={2}

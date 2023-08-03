@@ -1,5 +1,6 @@
 export interface menuLinks {
   label?: string;
+  icon?: string;
   href: string;
   isExternal?: boolean;
   disabled?: boolean;
@@ -9,20 +10,36 @@ export interface menuLinks {
 export const headerLinks = (): menuLinks[] => {
   return [
     {
+      href: `/`,
+      label: `Home`
+    },
+    {
+     href: `/categories`,
+     label: `Categories`
+   },
+   {
+    href: `/used`,
+    label: `Used`
+  },
+   {
      href: `/vintage`,
-     label: `vintage`
+     label: `Vintage`
    },
    {
-     href: `/toys&games`,
-     label: `toys&games`
+     href: `/brands`,
+     label: `Brands`
    },
    {
-     href: `/about`,
-     label: `about`
-   },
+    href: `/promotions`,
+    label: `Promotions`
+    },
    {
      href: `/account`,
-     label: `login`
+     icon: `Chest`
    },
+   {
+    href: `/cart`,
+    icon: `Cart`
+  },
   ];
 };

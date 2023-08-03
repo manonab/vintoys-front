@@ -1,29 +1,33 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState, ReactNode } from "react"; // Import ReactNode type
 import Cookies from "js-cookie";
 
-const AuthContext = createContext(false);
+interface AuthContextType {
+  isAuthenticated: boolean;
+  updateAuthentication: (authenticated: boolean) => void;
+}
+
+const AuthContext = createContext<AuthContextType>({
+  isAuthenticated: false,
+  updateAuthentication: () => {},
+});
 
 export const useAuth = () => useContext(AuthContext);
 
-// AuthProvider  to wrap your entire application
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
   useEffect(() => {
-    // Load the authentication state from cookies on component mount
     const userToken = Cookies.get("user_token");
     if (userToken) {
       setIsAuthenticated(true);
     }
   }, []);
 
-  const updateAuthentication = (authenticated) => {
+  const updateAuthentication = (authenticated: boolean) => {
     if (!authenticated) {
-      // Clear the user_token cookie when logging out
       Cookies.remove("user_token");
     } else {
-      // Set the user_token cookie when logging in
-      Cookies.set("user_token", "YOUR_AUTHENTICATION_TOKEN", { expires: 7 }); // Set the expiration time (in days) as needed
+      Cookies.set("user_token", "YOUR_AUTHENTICATION_TOKEN", { expires: 7 });
     }
     setIsAuthenticated(authenticated);
   };

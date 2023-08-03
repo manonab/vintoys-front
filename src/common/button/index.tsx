@@ -17,7 +17,7 @@ const Button: FunctionComponent<Props> = ({
   if (isPost)
     return (
       <div className="flex justify-center items-center my-10 hover:cursor-pointer">
-        <div className="bg-illustration-jouets bg-cover bg-center w-[250px] h-[130px] rounded rounded-1xl shadow-lg flex justify-center items-center shadow-lg">
+        <div className="bg-illustration-jouets bg-cover bg-center w-[250px] h-[80px] rounded rounded-2xl shadow-lg flex justify-center items-center shadow-lg">
           <button
             onClick={onClick}
             className={`${className} text-vintoys text-xl font-bold py-4 px-8 rounded-lg font-montserratSemiBold text-2xl`}

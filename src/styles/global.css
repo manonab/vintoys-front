@@ -5,14 +5,18 @@
 @layer base {
   @font-face {
     font-family: 'MontserratLight';
-    src: url('/static/assets/fonts/Montserrat-Light.ttf') format('truetype');
+    src: url('/static/fonts/Montserrat-Light.ttf') format('truetype');
   }
   @font-face {
     font-family: 'MontserratRegular';
-    src: url('/static/assets/fonts/Montserrat-Regular.ttf') format('truetype');
+    src: url('/static/fonts/Montserrat-Regular.ttf') format('truetype');
   }
   @font-face {
     font-family: 'MontserratSemiBold';
-    src: url('/static/assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+    src: url('/static/fonts/Montserrat-SemiBold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Baumans';
+    src: url('/static/fonts/Baumans-Regular.ttf') format('truetype');
   }
 }

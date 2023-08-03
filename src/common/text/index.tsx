@@ -20,6 +20,7 @@ export enum Weight {
 export enum Font {
   MontSerratBold = "font-montserratSemiBold",
   MontSerratRegular = "font-montserratRegular",
+  Baumans = "font-baumans",
 }
 
 interface Props {
@@ -55,7 +56,7 @@ const Text: FunctionComponent<Props> = ({
   textAlign = Align.Left,
   color = "text-vinToys",
   fontWeight = Weight.Normal,
-  fontFamily = Font.MontSerratRegular,
+  fontFamily = Font.Baumans,
   lineHeight = LineHeight.Normal,
   inline = false,
   className,

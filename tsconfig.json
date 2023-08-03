@@ -1,4 +1,5 @@
 {
+  "files": ["@types/svg.d.ts"],
   "compilerOptions": {
     "target": "es5",
     "lib": ["es7", "dom", "esnext"],
@@ -30,7 +31,8 @@
       "@hooks/*": ["src/hooks/*"],
       "@models/*": ["src/models/*"],
       "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@assets/*": ["public/static/assets/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

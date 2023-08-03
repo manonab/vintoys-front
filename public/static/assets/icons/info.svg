@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Compte-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Gestion-des-locations" transform="translate(-752.000000, -291.000000)" stroke="currentColor">
+            <g id="Group-24" transform="translate(736.000000, 275.000000)">
+                <g id="HOSTNFLY_PICTO_info2" transform="translate(16.000000, 16.000000)">
+                    <circle id="Oval" stroke-width="1.5" cx="12" cy="12" r="11.175"></circle>
+                    <rect id="Rectangle" fill="currentColor" fill-rule="nonzero" x="11.021" y="10.268" width="1.958" height="7.879" rx="0.979"></rect>
+                    <circle id="Oval" fill="currentColor" fill-rule="nonzero" cx="12" cy="6.628" r="1"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
