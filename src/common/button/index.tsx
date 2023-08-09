@@ -7,38 +7,40 @@ interface Props {
   onClick: () => void;
   className?: string;
 }
+
 const Button: FunctionComponent<Props> = ({
   text,
-  isPost,
+  isPost = false,
   onClick,
-  disabled,
-  className,
+  disabled = false,
+  className = "",
 }: Props) => {
-  if (isPost)
+  if (isPost) {
     return (
       <div className="flex justify-center items-center my-10 hover:cursor-pointer">
-        <div className="bg-illustration-jouets bg-cover bg-center w-[250px] h-[80px] rounded rounded-2xl shadow-lg flex justify-center items-center shadow-lg">
+        <div className="bg-illustration-jouets bg-cover bg-center w-[250px] h-[80px] rounded rounded-[10px] shadow-lg flex justify-center items-center shadow-lg">
           <button
             onClick={onClick}
-            className={`${className} text-vintoys text-xl font-bold py-4 px-8 rounded-lg font-montserratSemiBold text-2xl`}
+            className={`${className} text-vintoys text-xl font-bold py-4 px-8 rounded-lg text-2xl`}
           >
             {text}
           </button>
         </div>
       </div>
     );
-  if (!isPost)
-    return (
-      <button
-        onClick={onClick}
-        className={`${
-          disabled ? "bg-gray-300 cursor-not-allowed" : ""
-        } ${className} bg-lavender text-vintoys text-sm py-2 px-4 rounded-md font-semibold shadow-md font-montserratLight hover:shadow-lg hover:transform hover:transition hover:bg-lavenderDarken`}
-      >
-        {text}
-      </button>
-    );
-  return <div />;
+  }
+
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={`${
+        disabled ? "bg-gray-300 cursor-not-allowed" : ""
+      } ${className} text-black text-XSmall py-2 px-4 rounded-md font-semibold shadow-md  hover:shadow-lg hover:transform hover:transition`}
+    >
+      {text}
+    </button>
+  );
 };
 
 export default Button;

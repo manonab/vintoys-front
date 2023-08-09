@@ -31,7 +31,7 @@ const Title: FunctionComponent<Props> = ({
       <h2
         className={`${className} ${
           color ? color : "text-vinToys"
-        } relative whitespace-pre-line font-montserratRegular z-[1] text-XLarge md:text-MediumLarge md:leading-extraLoose tracking-tighter leading-medium`}
+        } relative whitespace-pre-line font-montserratRegular z-[1] text-Large md:text-MediumLarge md:leading-extraLoose tracking-tighter leading-medium`}
       >
         {text}
         {children}
@@ -42,7 +42,7 @@ const Title: FunctionComponent<Props> = ({
       <h3
         className={`${className} ${
           color ? color : "text-vinToys"
-        } relative whitespace-pre-line font-montserratRegular z-[1] text-[3.2rem] leading-XLoose md:text-[3.6rem]`}
+        } relative whitespace-pre-line font-montserratRegular z-[1] text-Medium leading-XLoose md:text-[3.6rem]`}
       >
         {text}
         {children}
@@ -53,7 +53,7 @@ const Title: FunctionComponent<Props> = ({
       <h4
         className={`${className} ${
           color ? color : "text-vinToys"
-        } relative whitespace-pre-line font-montserratRegular z-[1] text-[2.4rem] leading-small`}
+        } relative whitespace-pre-line font-montserratRegular z-[1] text-[25px] leading-small`}
       >
         {text}
         {children}

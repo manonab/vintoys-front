@@ -4,19 +4,16 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-violet py-10 h-[150px]">
+    <footer className="bg-paleBeige py-10 h-[180px]">
       <Container className="container mx-auto px-4">
         <div className="flex flex-col justify-center items-center">
           <div className="mb-4">
-            <a
-              href="/about"
-              className="text-white text-xs mr-4 font-baumans text-XSMall text-black"
-            >
+            <a href="/about" className="text-white text-xs mr-4 font-baumans text-XSMall">
               About Us
             </a>
             <a
               href="/contact"
-              className="text-white text-xs mr-4 font-baumans text-XSMall text-black"
+              className="text-white text-xs mr-4 font-baumans text-XSMall"
             >
               Contact Us
             </a>

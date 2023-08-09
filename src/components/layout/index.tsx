@@ -12,7 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const menuLinks = headerLinks();
 
   return (
-    <Container className="flex flex-col min-h-screen">
+    <Container className="flex flex-col min-h-screen bg-mainColor min-w-screen">
       <Header menu={menuLinks} />
       <main className="flex-grow">{children}</main>
       <Footer />

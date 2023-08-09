@@ -2,7 +2,7 @@ import Button from "@common/button";
 import { Container } from "@common/container";
 import Text, { Align, Size, Weight } from "@common/text";
 import Title from "@common/title";
-import { useGetAdsWithId } from "@hooks/use-ads-id";
+import { useGetAdsWithId } from "@hooks/ads/use-ads-id";
 import { useRouter } from "next/router";
 import React from "react";
 

@@ -2,14 +2,21 @@ import React, { FunctionComponent } from "react";
 
 import Chest from "@assets/icons/chest.svg";
 import Contact from "@assets/icons/contact.svg";
-import HandShake from "@assets/icons/hand-shake.svg";
-import Info from "@assets/icons/info.svg";
-import Location from "@assets/icons/location.svg";
 import MenuHome from "@assets/icons/menu-home.svg";
 import SignUp from "@assets/icons/sign-up-peace.svg";
-import User from "@assets/icons/user.svg";
-import Users from "@assets/icons/users.svg";
+
 import Cart from "@assets/icons/cart.svg";
+import Logo from "@assets/icons/logo.svg";
+import Edit from "@assets/icons/edit.svg";
+import Delete from "@assets/icons/delete.svg";
+import Heart from "@assets/icons/heart.svg";
+import HeartFilled from "@assets/icons/heartFilled.svg";
+import Home from "@assets/icons/home.svg";
+import Alien from "@assets/icons/alien.svg";
+import Search from "@assets/icons/search.svg";
+import Teddy from "@assets/icons/ours.svg";
+import Card from "@assets/icons/cartes.svg";
+import GameBoy from "@assets/icons/gameboyy.svg";
 
 interface Props {
   name: string | undefined;
@@ -26,22 +33,35 @@ const pickIcon = (name: any) => {
       return Chest;
     case "Contact":
       return Contact;
-    case "HandShake":
-      return HandShake;
-    case "Info":
-      return Info;
-    case "Location":
-      return Location;
     case "MenuHome":
       return MenuHome;
-    case "Users":
-      return Users;
-    case "User":
-      return User;
     case "SignUp":
       return SignUp;
     case "Cart":
       return Cart;
+    case "Logo":
+      return Logo;
+    case "Delete":
+      return Delete;
+    case "Edit":
+      return Edit;
+    case "Heart":
+      return Heart;
+    case "HeartFilled":
+      return HeartFilled;
+    case "Home":
+      return Home;
+    case "Alien":
+      return Alien;
+    case "Teddy":
+      return Teddy;
+    case "Card":
+      return Card;
+    case "GameBoy":
+      return GameBoy;
+    case "Search":
+      return Search;
+
     default:
       throw new Error("No Svg found!");
   }

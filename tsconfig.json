@@ -27,6 +27,7 @@
       "@common/*": ["src/common/*"],
       "@components/*": ["src/components/*"],
       "@context/*": ["src/context/*"],
+      "@middleware/*": ["src/middleware/*"],
       "@helpers/*": ["src/helpers/*"],
       "@hooks/*": ["src/hooks/*"],
       "@models/*": ["src/models/*"],

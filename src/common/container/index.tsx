@@ -5,9 +5,15 @@ interface Props {
   onClick?: () => void;
   className?: string;
   debug?: boolean;
+  style?: string;
 }
 
-export const Container: React.FC<Props> = ({ children, className, onClick }: Props) => {
+export const Container: React.FC<Props> = ({
+  children,
+  className,
+  onClick,
+  style,
+}: Props) => {
   return (
     <div
       onClick={onClick}

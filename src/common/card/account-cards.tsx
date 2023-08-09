@@ -1,6 +1,6 @@
+import React from "react";
 import { Container } from "@common/container";
 import Text, { Align, Size } from "@common/text";
-import React from "react";
 
 interface Props {
   title: string;
@@ -10,7 +10,7 @@ interface Props {
 const AccountCard: React.FC<Props> = ({ title, description, onClick }: Props) => {
   return (
     <Container
-      className="shadow-lg md:w-[350px] h-[130px] w-full md:my-10 my-5 rounded-2xl hover:bg-gray-50 hover:cursor-pointer"
+      className="shadow-lg bg-lavenderDarken md:w-[400px] h-[130px] w-full md:my-10 my-5 rounded-2xl hover:bg-gray-50 hover:cursor-pointer"
       onClick={onClick}
     >
       <Text

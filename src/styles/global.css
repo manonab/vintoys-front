@@ -19,4 +19,12 @@
     font-family: 'Baumans';
     src: url('/static/fonts/Baumans-Regular.ttf') format('truetype');
   }
+  @font-face {
+    font-family: 'Capuch';
+    src: url('/static/fonts/Capuch.otf') format('truetype');
+  }
+  @font-face {
+    font-family: 'NinetiesDisplay';
+    src: url('/static/fonts/NinetiesDisplay.otf') format('truetype');
+  }
 }

@@ -21,11 +21,12 @@ export enum Font {
   MontSerratBold = "font-montserratSemiBold",
   MontSerratRegular = "font-montserratRegular",
   Baumans = "font-baumans",
+  Capuch = "font-Capuch",
 }
 
 interface Props {
   text: string;
-  size: Size;
+  size?: Size;
   italic?: boolean;
   textAlign?: Align;
   color?: string;
@@ -48,6 +49,7 @@ export enum LineHeight {
   Normal = "leading-none",
   Inter = "leading-tight",
   Medium = "leading-normal",
+  Loose = "leading-extra-loose",
 }
 const Text: FunctionComponent<Props> = ({
   text,

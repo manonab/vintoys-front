@@ -1,8 +1,7 @@
-// sign-in.tsx
 import React, { useState } from "react";
 import Form from "@common/form";
 import { useAuth } from "@context/auth-context";
-import { useSignIn } from "@hooks/use-signin";
+import { useSignIn } from "@hooks/auth/use-signin";
 import { useRouter } from "next/router";
 
 const SignIn = () => {
@@ -15,8 +14,8 @@ const SignIn = () => {
   const handleAuthentification = async () => {
     try {
       const resp = await signIn({ email, password });
-      if (resp?.message === "Sign in successful") {
-        updateAuthentication(true);
+      if (resp?.status === 200) {
+        updateAuthentication(true, resp?.data?.user_token);
         router.push("/account");
       }
     } catch (err) {
@@ -25,15 +24,13 @@ const SignIn = () => {
   };
 
   return (
-    <div>
-      <Form
-        email={email}
-        setEmail={setEmail}
-        password={password}
-        setPassword={setPassword}
-        handleAuthentification={handleAuthentification}
-      />
-    </div>
+    <Form
+      email={email}
+      setEmail={setEmail}
+      password={password}
+      setPassword={setPassword}
+      handleAuthentification={handleAuthentification}
+    />
   );
 };
 

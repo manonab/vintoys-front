@@ -1,21 +1,12 @@
 import React from "react";
 import { Ads } from "@models/ad";
-import { Container } from "@common/container";
-import Text, { Align, LineHeight, Size, Weight } from "@common/text";
-import Button from "@common/button";
+import Text, { Align, Font, LineHeight, Size, Weight } from "@common/text";
 import { useRouter } from "next/router";
+import FavoriteButton from "@components/favorite";
 
-type Ad = Partial<Ads>;
+type Ad = Ads;
 
-const AdsCards: React.FC<Ad> = ({
-  title,
-  description,
-  price,
-  id,
-  thumbnail_url,
-  time_ago,
-  category,
-}: Ad) => {
+const AdsCards: React.FC<Ad> = ({ title, state, price, id, thumbnail_url }: Ad) => {
   const router = useRouter();
 
   const handleViewDetails = () => {
@@ -23,55 +14,64 @@ const AdsCards: React.FC<Ad> = ({
       router.push(`/ads/${id}`);
     }
   };
+
   return (
-    <Container className="flex flex-wrap flex-col border border-lavender my-2 rounded bg-white  shadow-lg p-4 w-64 rounded-2xl">
-      <img
-        src={thumbnail_url}
-        alt="Ad Image"
-        className="w-full h-32 object-cover mb-4 rounded rounded-3xl"
-      />
-      <Text
-        text={`${title}`}
-        size={Size.XSMall}
-        textAlign={Align.Left}
-        fontWeight={Weight.Bold}
-        className="mb-2"
-        lineHeight={LineHeight.Inter}
-      />
-      <Text
-        text={`${description}`}
-        size={Size.XSMall}
-        textAlign={Align.Left}
-        fontWeight={Weight.Light}
-        className="mb-2 text-sm"
-        lineHeight={LineHeight.Inter}
-      />
-      <Text
-        text={`Posted ${time_ago}`}
-        size={Size.XSMall}
-        textAlign={Align.Left}
-        fontWeight={Weight.Light}
-        className="mb-2 text-sm"
-        lineHeight={LineHeight.Inter}
-      />
-      <Text
-        text={`${price}€`}
-        size={Size.XSMall}
-        textAlign={Align.Left}
-        fontWeight={Weight.Light}
-        className="mb-2 text-sm"
-        lineHeight={LineHeight.Inter}
-      />
-      <Text
-        text="Location: New York, USA"
-        size={Size.XSMall}
-        textAlign={Align.Left}
-        fontWeight={Weight.Light}
-        className="mb-4 text-sm"
-        lineHeight={LineHeight.Inter}
-      />
-      {id !== undefined && <Button text="View Details" onClick={handleViewDetails} />}
-    </Container>
+    <div
+      style={{
+        background:
+          "linear-gradient(180deg, rgba(250, 154, 227, 0.30) 0%, rgba(251, 244, 249, 0.16) 47.40%, rgba(177, 185, 36, 0.30) 100%), #F8F4E8",
+      }}
+      className="flex flex-wrap flex-col my-2 mx-4 rounded rounded-[2px] w-[240px] h-[343px]"
+    >
+      <div
+        onClick={handleViewDetails}
+        className="hover:cursor-pointer flex flex-wrap flex-col my-2 mx-4 rounded rounded-[2px] w-[240px] h-[328px] bg-[#F5F5F5] right-7 bottom-2 relative"
+      >
+        <div className="flex flex-row justify-between items-center my-4 mx-2">
+          <span className="rounded rounded-3xl border border-black px-3">
+            <p className="text-[10px]">Pro</p>
+          </span>
+          <FavoriteButton adId={id} />
+        </div>
+
+        <img
+          src={thumbnail_url}
+          alt="Ad Image"
+          className="w-[90%] h-32 object-cover m-4 mx-auto"
+        />
+        <div className="flex flex-col items-start m-3">
+          <Text
+            text={`${title}`}
+            textAlign={Align.Left}
+            fontWeight={Weight.Bold}
+            fontFamily={Font.Capuch}
+            lineHeight={LineHeight.Inter}
+            className="text-[15px] capitalize"
+          />
+          <Text
+            text="@username"
+            textAlign={Align.Left}
+            fontWeight={Weight.Light}
+            lineHeight={LineHeight.Inter}
+            className="text-[8px]"
+          />
+          <Text
+            text={`${price}€`}
+            textAlign={Align.Left}
+            fontWeight={Weight.Light}
+            lineHeight={LineHeight.Inter}
+            className="text-[18px] mt-5"
+          />
+          <Text
+            text={`${state}`}
+            textAlign={Align.Left}
+            fontWeight={Weight.Light}
+            lineHeight={LineHeight.Inter}
+            className="text-[8px] uppercase mt-1"
+          />
+        </div>
+      </div>
+    </div>
   );
 };
 

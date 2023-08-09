@@ -1,22 +1,20 @@
 import React from "react";
-import Text, { Align, Size } from "@common/text";
-import Title from "@common/title";
+import Text, { Align, Font } from "@common/text";
 
 const Banner = () => {
   return (
-    <div className="h-[450px] flex items-center justify-center bg-game-time bg-cover bg-center">
-      <div>
-        <Title
-          level={2}
-          text={"Welcome to Vintoys"}
-          className="mb-[10px] text-[36px] text-white"
-        />
+    <div className="relative z-0 h-[430px] w-[1224px] flex items-center mx-auto mt-10 justify-center bg-cover bg-center bg-banner opacity-75 rounded rounded-2xl">
+      <div className="relative w-full ml-20 h-2/4 flex flex-col items-start">
         <Text
-          text={"Discover vintage toys and games"}
-          className={"text-[18px] text-white"}
-          size={Size.XSMall}
-          textAlign={Align.Center}
+          text="Welcome to Capiche."
+          className="font-black relative text-[40px] mt-10 mb-5"
+          fontFamily={Font.Capuch}
+          color={"text-white"}
+          textAlign={Align.Left}
         />
+        <div className="bg-black rounded rounded-[6px] py-[14px] px-[24px]">
+          <p className="text-white">Start to sell</p>
+        </div>
       </div>
     </div>
   );
