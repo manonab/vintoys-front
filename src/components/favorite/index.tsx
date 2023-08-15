@@ -1,5 +1,3 @@
-// FavoriteButton.tsx
-
 import React, { useEffect, useState } from "react";
 import SVG from "@common/svg";
 import { useDeleteFavorite } from "@hooks/favorite/use-delete-favorite";

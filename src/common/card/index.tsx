@@ -6,7 +6,14 @@ import FavoriteButton from "@components/favorite";
 
 type Ad = Ads;
 
-const AdsCards: React.FC<Ad> = ({ title, state, price, id, thumbnail_url }: Ad) => {
+const AdsCards: React.FC<Ad> = ({
+  title,
+  state,
+  price,
+  id,
+  thumbnail_url,
+  seller_username,
+}: Ad) => {
   const router = useRouter();
 
   const handleViewDetails = () => {
@@ -16,21 +23,12 @@ const AdsCards: React.FC<Ad> = ({ title, state, price, id, thumbnail_url }: Ad) 
   };
 
   return (
-    <div
-      style={{
-        background:
-          "linear-gradient(180deg, rgba(250, 154, 227, 0.30) 0%, rgba(251, 244, 249, 0.16) 47.40%, rgba(177, 185, 36, 0.30) 100%), #F8F4E8",
-      }}
-      className="flex flex-wrap flex-col my-2 mx-4 rounded rounded-[2px] w-[240px] h-[343px]"
-    >
+    <div className="flex flex-wrap flex-col my-2 mx-4 rounded rounded-[2px] w-[240px] h-[343px] bg-yellowCapiche bg-opacity-25">
       <div
         onClick={handleViewDetails}
         className="hover:cursor-pointer flex flex-wrap flex-col my-2 mx-4 rounded rounded-[2px] w-[240px] h-[328px] bg-[#F5F5F5] right-7 bottom-2 relative"
       >
-        <div className="flex flex-row justify-between items-center my-4 mx-2">
-          <span className="rounded rounded-3xl border border-black px-3">
-            <p className="text-[10px]">Pro</p>
-          </span>
+        <div className="flex flex-row justify-end items-center my-4 mx-2">
           <FavoriteButton adId={id} />
         </div>
 
@@ -49,7 +47,7 @@ const AdsCards: React.FC<Ad> = ({ title, state, price, id, thumbnail_url }: Ad) 
             className="text-[15px] capitalize"
           />
           <Text
-            text="@username"
+            text={`@${seller_username}`}
             textAlign={Align.Left}
             fontWeight={Weight.Light}
             lineHeight={LineHeight.Inter}

@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import Footer from "@components/footer";
 import Header from "@components/header";
-import { headerLinks } from "@components/header/links";
 import { Container } from "@common/container";
 
 interface LayoutProps {
@@ -9,11 +8,9 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const menuLinks = headerLinks();
-
   return (
-    <Container className="flex flex-col min-h-screen bg-mainColor min-w-screen">
-      <Header menu={menuLinks} />
+    <Container className="flex flex-col min-h-screen bg-mainColor">
+      <Header />
       <main className="flex-grow">{children}</main>
       <Footer />
     </Container>

@@ -1,5 +1,5 @@
 import SVG from "@common/svg";
-import { useGetMyAds } from "@hooks/ads/use-get-my-ads";
+import { useGetMyAds } from "@hooks/ads/get/use-get-my-ads";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 

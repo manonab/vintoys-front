@@ -5,11 +5,10 @@ export interface Ads{
      price: number;
      brand: string;
      thumbnail_url: string;
-     // owner?: string;
-     // created_at: string;
      description: string;
-     state: string;
+     state: number;
      time_ago: string;
+     seller_username: string;
 }
 export interface AdsPayload {
      data: Ads[];

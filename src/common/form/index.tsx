@@ -32,6 +32,7 @@ const Form: React.FC<Props> = ({
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
+          type="password"
           className="font-baumans border w-1/4 p-2 my-2 rounded border-1 border-dotted mx-auto"
           placeholder="Password"
           value={password}

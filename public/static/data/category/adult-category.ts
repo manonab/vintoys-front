@@ -1,0 +1,16 @@
+export const AdultCategoy = [
+     {id:1, category:"Board Games and Strategy Games"},
+     {id:2, category:"Video Games and Gaming PCs"},
+     {id:3, category:"Collectible Card Games (CCG)"},
+     {id:4, category:"Tabletop Role-Playing Games (RPG)"},
+     {id:5, category:"Complex Puzzles and Brain Teasers"},
+     {id:6, category:"Books, Comics, and Adult Literature"},
+     {id:7, category:"Musical Instruments and Audio Equipment"},
+     {id:8, category:"Strategy and Euro-style Board Games"},
+     {id:9, category:"Party Games and Socializing"},
+     {id:10, category:"Simulation and Management Games"},
+     {id:11, category:"Advanced Card Games and Strategy Games"},
+     {id:12, category:"Technological Gadgets and Collectibles"},
+     {id:13, category:"Virtual Reality (VR) and Augmented Reality (AR) Games"},
+     {id:14, category:"Sports and Recreational Equipment for Adults"},
+]

@@ -1,4 +1,3 @@
-import SVG from "@common/svg";
 import React from "react";
 
 interface CategoryProps {
@@ -7,7 +6,6 @@ interface CategoryProps {
   image: string;
   flexDirection: string;
   fontColor: string;
-  backgroundColor: string;
   boxShadow: string;
   imgStyle: string;
   isDouble: boolean;
@@ -20,7 +18,6 @@ const CategoryCard: React.FC<CategoryProps> = ({
   image,
   flexDirection,
   fontColor,
-  backgroundColor,
   boxShadow,
   imgStyle,
   isDouble,
@@ -28,8 +25,8 @@ const CategoryCard: React.FC<CategoryProps> = ({
 }) => {
   return (
     <div
-      style={{ background: backgroundColor, boxShadow: boxShadow }}
-      className={`overflow-hidden w-[373px] h-[208px] mx-5  rounded rounded-[10px] flex ${flexDirection} items-center justify-end md:my-0 my-10`}
+      style={{ boxShadow: boxShadow }}
+      className={`overflow-hidden w-[373px] h-[208px] mx-5  rounded rounded-[10px] flex ${flexDirection} items-center justify-end my-2 md:my-10 bg-yellowCapiche`}
     >
       {!isDouble && <img src={image} className={` object-cover relative ${imgStyle}`} />}
       {isDouble && (

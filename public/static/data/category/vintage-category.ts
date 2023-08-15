@@ -1,0 +1,17 @@
+export const VintageCategory = [
+     {id:1, category:"Classic Board Games"},
+     {id:2, category:"Vintage Puzzles"},
+     {id:3, category:"Retro Action Figures"},
+     {id:4, category:"Antique Dolls and Toys"},
+     {id:5, category:"Vintage Toy Cars"},
+     {id:6, category:"Collectible Tin Toys"},
+     {id:7, category:"Wooden Building Blocks"},
+     {id:8, category:"Vintage Arcade Games"},
+     {id:9, category:"Old-school Toy Trains"},
+     {id:10, category:"Vintage Playsets"},
+     {id:11, category:"Nostalgic Outdoor Games"},
+     {id:12, category:"Vintage Video Game Consoles"},
+     {id:13, category:"Traditional Marbles and Games"},
+     {id:14, category:"Vintage Stuffed Animals"},
+     {id:15, category:"Retro Toy Robots"},
+]

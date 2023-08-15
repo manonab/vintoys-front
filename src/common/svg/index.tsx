@@ -14,14 +14,15 @@ import HeartFilled from "@assets/icons/heartFilled.svg";
 import Home from "@assets/icons/home.svg";
 import Alien from "@assets/icons/alien.svg";
 import Search from "@assets/icons/search.svg";
+import Arrow from "@assets/icons/arrow.svg";
 import Teddy from "@assets/icons/ours.svg";
 import Card from "@assets/icons/cartes.svg";
 import GameBoy from "@assets/icons/gameboyy.svg";
 
 interface Props {
   name: string | undefined;
-  width?: number | "auto";
-  height?: number | "auto";
+  width: number | "auto";
+  height: number | "auto";
   fill?: string;
   className?: string;
   url?: string;
@@ -61,7 +62,8 @@ const pickIcon = (name: any) => {
       return GameBoy;
     case "Search":
       return Search;
-
+    case "Arrow":
+      return Arrow;
     default:
       throw new Error("No Svg found!");
   }
