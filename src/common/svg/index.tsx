@@ -21,8 +21,8 @@ import GameBoy from "@assets/icons/gameboyy.svg";
 
 interface Props {
   name: string | undefined;
-  width: number | "auto";
-  height: number | "auto";
+  width?: number | "auto";
+  height?: number | "auto";
   fill?: string;
   className?: string;
   url?: string;

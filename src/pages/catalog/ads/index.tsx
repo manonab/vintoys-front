@@ -23,7 +23,7 @@ const Ads: React.FC = () => {
       <Container className="text-center mt-8">
         <Title
           text="The fresh news"
-          className="my-10 mx-20 text-text text-left font-inter"
+          className="md:my-10 md:mx-20 my-2 mx-2 text-text text-left font-inter"
           level={4}
         />
       </Container>
@@ -40,7 +40,7 @@ const Ads: React.FC = () => {
             thumbnail_url={ad.thumbnail_url}
             time_ago={ad.time_ago}
             category={ad.category}
-            seller_username={ad.seller_username}
+            username={ad.username}
           />
         ))}
       </Container>

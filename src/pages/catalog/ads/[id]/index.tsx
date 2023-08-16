@@ -22,24 +22,38 @@ const AdDetailsPage: React.FC = () => {
             <img
               src={ad.thumbnail_url}
               alt="Ad Image"
-              className="w-full h-[250px] object-cover my-4 rounded rounded-1xl"
-            />{" "}
-            <Title level={3} text={ad.title} className="mt-2" />
-            <Text size={Size.XSMall} text={ad.description} className="mt-2" />
+              className="w-full h-[280px] object-cover my-4 rounded rounded-1xl"
+            />
+            <Title level={3} text={ad.title} className="m-2 font-Capuch" />
+            <Text size={Size.XSMall} text={ad.description} className="m-2 font-inter" />
             <Text
               size={Size.XSMall}
               text={ad.state}
               textAlign={Align.Right}
-              className="mt-2"
+              className="m-3 font-inter"
             />
-            <Text size={Size.XSMall} text={"location"} className="mt-2" />
-            <Text size={Size.XSMall} text={`${ad.price}€`} className="mt-2 font-bold" />
+            {/* <Text size={Size.XSMall} text={"location"} className="m-2" /> */}
+            <Text
+              size={Size.XSMall}
+              fontWeight={Weight.ExtraBold}
+              text={`${ad.price}€`}
+              textAlign={Align.Right}
+              className="m-3 font-bold"
+            />
           </Container>
-          <Container className="flex md:flex-col justify-center md:border rounded md:rounded-2xl md:h-[200px] md:w-[200px] h-10 md:p-5 md:mt-20 mt-10 mb-5 w-3/4 items-center ">
+          <Container className="flex md:flex-col md:justify-evenly justify-center md:border rounded md:rounded-2xl md:h-[200px] md:w-[200px] h-10 md:p-5 md:mt-20 mt-10 mb-5 w-3/4 items-center ">
             <Container>
-              <Text text="seller name" size={Size.XSMall} />
+              <Text
+                text={`@${ad.username}`}
+                className="font-bold font-inter"
+                size={Size.XSMall}
+              />
             </Container>
-            <Button text="Send a message" onClick={() => console.log("couc")} />
+            <Button
+              text="Send a message"
+              className="bg-yellowCapiche text-inter text-white"
+              onClick={() => console.log("couc")}
+            />
           </Container>
         </Container>
       ) : (

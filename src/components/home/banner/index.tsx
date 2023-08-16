@@ -1,25 +1,22 @@
 import React from "react";
 import Text, { Align, Font } from "@common/text";
-import { useTranslation } from "next-i18next";
+import { Container } from "@common/container";
 
 const Banner = () => {
-  const { t } = useTranslation();
-
   return (
-    <div className="relative z-0 h-[300px] md:h-[430px] w-full md:w-[1224px] flex items-center mx-auto mt-10 justify-center bg-cover bg-center bg-banner opacity-75 rounded rounded-2xl">
-      <div className="relative w-full ml-20 h-2/4 flex flex-col items-start">
+    <Container className="z-0 h-[250px] md:h-[430px] w-full md:w-[1224px] flex items-center mx-auto mt-10 justify-center bg-cover bg-center bg-banner opacity-75 rounded rounded-2xl">
+      <Container className="w-full md:ml-20 md:h-2/4 flex flex-col items-start">
         <Text
           text="Welcome to Capiche."
-          className="font-black relative text-[40px] mt-10 mb-5"
+          className="font-black text-[40px] my-3 md:mt-10 md:mb-5 mx-auto w-full"
           fontFamily={Font.Capuch}
-          color={"text-white"}
-          textAlign={Align.Left}
+          color={"text-white md:text-left text-center"}
         />
-        <div className="bg-black rounded rounded-[6px] py-[14px] px-[24px]">
+        <Container className="md:ml-0 bg-black rounded rounded-[6px] md:py-[14px] md:px-[24px] p-[8px]">
           <p className="text-white">Start to sell</p>
-        </div>
-      </div>
-    </div>
+        </Container>
+      </Container>
+    </Container>
   );
 };
 

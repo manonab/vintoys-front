@@ -8,7 +8,7 @@ export interface Ads{
      description: string;
      state: number;
      time_ago: string;
-     seller_username: string;
+     username: string;
 }
 export interface AdsPayload {
      data: Ads[];

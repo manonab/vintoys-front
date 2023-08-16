@@ -44,10 +44,10 @@ const Categories: React.FC = () => {
     <Container>
       <Title
         text="Recherche par categorie"
-        className="md:my-10 my-5 mx-20 text-left font-inter text-text"
+        className="md:my-10 my-5 mx-3 md:mx-20 text-left font-inter text-text"
         level={4}
       />
-      <div className="hover:cursor-pointer hover:transform flex md:flex-row flex-col justify-center mx-auto items-center w-auto">
+      <Container className="hover:cursor-pointer hover:transform flex md:flex-row flex-col justify-center mx-auto items-center w-auto">
         {categories.map((category) => (
           <CategoryCard
             isDouble={category.isDouble}
@@ -62,7 +62,7 @@ const Categories: React.FC = () => {
             titleStyle={category.titleStyle}
           />
         ))}
-      </div>
+      </Container>
     </Container>
   );
 };

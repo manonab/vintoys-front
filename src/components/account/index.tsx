@@ -1,10 +1,10 @@
 import React from "react";
-import Button from "@common/button";
+import { useRouter } from "next/router";
+import { useAuth } from "@context/auth-context";
+
 import { Container } from "@common/container";
 import AccountCard from "@common/card/account-cards";
-import { useRouter } from "next/router";
 import ProfilCard from "@common/card/profil-card";
-import { useAuth } from "@context/auth-context";
 
 const UserAccount: React.FC = () => {
   const router = useRouter();
@@ -13,11 +13,6 @@ const UserAccount: React.FC = () => {
   return (
     <Container>
       <ProfilCard user_id={user_id} user_name={user_name} />
-      <Button
-        isPost={true}
-        text="Post your ad"
-        onClick={() => router.push("ads/create")}
-      />
       <Container className="flex flex-wrap md:flex-row w-3/4">
         <AccountCard
           title="Adverts"
