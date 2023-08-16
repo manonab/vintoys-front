@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import Form from "@common/form";
 import { useAuth } from "@context/auth-context";
 import { useSignIn } from "@hooks/auth/use-signin";
-import { useRouter } from "next/router";
 
 const SignIn = () => {
-  const { updateAuthentication } = useAuth();
+  const { updateAuthentication, isAuthenticated } = useAuth();
   const { signIn } = useSignIn();
   const router = useRouter();
   const [email, setEmail] = useState<string>("");

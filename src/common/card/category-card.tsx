@@ -1,3 +1,4 @@
+import { Container } from "@common/container";
 import React from "react";
 
 interface CategoryProps {
@@ -26,14 +27,14 @@ const CategoryCard: React.FC<CategoryProps> = ({
   return (
     <div
       style={{ boxShadow: boxShadow }}
-      className={`overflow-hidden w-[373px] h-[208px] mx-5  rounded rounded-[10px] flex ${flexDirection} items-center justify-end my-2 md:my-10 bg-yellowCapiche`}
+      className={`overflow-hidden w-full h-[150px] md:w-[373px] h-[208px] mx-5  rounded rounded-[10px] flex ${flexDirection} items-center justify-end my-2 md:my-10 bg-yellowCapiche`}
     >
       {!isDouble && <img src={image} className={` object-cover relative ${imgStyle}`} />}
       {isDouble && (
-        <div className="flex flex-col">
+        <Container className="flex flex-col">
           <img src={image} className={` object-cover relative ${imgStyle}`} />
           <img src={image} className={` object-cover relative ${imgStyle}`} />
-        </div>
+        </Container>
       )}
       <a
         href={href}

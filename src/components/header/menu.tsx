@@ -3,6 +3,7 @@ import SVG from "@common/svg";
 import { childrenGames } from "../../../public/static/data/category/children-category";
 import { VintageCategory } from "public/static/data/category/vintage-category";
 import { AdultCategoy } from "public/static/data/category/adult-category";
+import { Container } from "@common/container";
 
 interface SidebarMenuProps {
   onClose: () => void;
@@ -16,9 +17,9 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="z-20 fixed top-0 left-0 min-h-screen w-1/4 bg-mainColor shadow-lg">
-      <div className="p-4 cursor-pointer w-full">
-        <div>
+    <div className="z-20 fixed top-0 left-0 min-h-screen w-3/4 md:w-1/4 bg-mainColor shadow-lg">
+      <Container className="p-4 cursor-pointer w-full">
+        <Container>
           <span
             className="flex flex-row items-center justify-end"
             onClick={() => toggleCategory("Children")}
@@ -44,8 +45,8 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ onClose }) => {
               ))}
             </ul>
           )}
-        </div>
-        <div>
+        </Container>
+        <Container>
           <span
             onClick={() => toggleCategory("Adult")}
             className="flex flex-row items-center justify-end mt-10"
@@ -71,8 +72,8 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ onClose }) => {
               ))}
             </ul>
           )}
-        </div>
-        <div>
+        </Container>
+        <Container>
           <span
             onClick={() => toggleCategory("Vintage")}
             className="flex flex-row items-center justify-end mt-10 hover:cursor-pointer"
@@ -101,8 +102,8 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ onClose }) => {
               ))}
             </ul>
           )}
-        </div>
-      </div>
+        </Container>
+      </Container>
     </div>
   );
 };

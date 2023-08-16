@@ -19,7 +19,7 @@ const TopButton: FunctionComponent<Props> = ({
       disabled={disabled}
       className={`${
         disabled ? "bg-categoryCard cursor-not-allowed" : ""
-      } ${className} text-black text-XSmall py-2 px-4 rounded-3xl border border-black shadow-md  hover:shadow-lg hover:transform hover:transition`}
+      } ${className} text-black p-1 mx-1 w-[180px] md:text-XSmall md:py-2 md:px-4 rounded-lg md:rounded-3xl border border-black shadow-md hover:shadow-lg hover:transform hover:transition`}
     >
       {text}
     </button>
