@@ -6,6 +6,7 @@ import React, { useEffect } from "react";
 const MyAds: React.FC = () => {
   const { adsData, isLoading, isError } = useGetMyAds();
   const router = useRouter();
+
   useEffect(() => {}, [adsData]);
 
   if (isLoading) {
@@ -17,27 +18,27 @@ const MyAds: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-wrap justify-around w-full my-20 items-center">
+    <div className="flex w-full flex-wrap md:flex-row flex-col justify-around md:my-20 my-16 items-center">
       {adsData?.map((ad) => (
-        <div className="bg-lavenderDarken w-1/4 rounded text-black p-4 rounded-2xl shadow-xl">
-          <img src={ad.thumbnail_url} className="rounded rounded-2xl mb-5" />
-          <p className="text-Small text-center pb-2 font-semibold">{ad.title}</p>
-          <p>{ad.category}</p>
-          <p>{ad.created_at}</p>
+        <div className="md:block items-end  justify-evenly flex w-full bg-yellowCapiche rounded text-white p-4 rounded-2xl shadow-xl my-5">
+          <img
+            src={ad.thumbnail_url}
+            className="rounded rounded-2xl mb-5 w-2/4 md:w-auto"
+          />
+          <p className="text-Small text-center md:pb-2 font-semibold">{ad.title}</p>
           <p className="font-bold">{ad.price}€</p>
-          <p>{ad.state}</p>
           <div className="flex justify-end items-center pt-5">
             <span
               onClick={() => router.push(`/ads/${ad.id}/edit`)}
               className="hover:cursor-pointer"
             >
-              <SVG name={"Edit"} width={25} height={23} fill={"#000"} />
+              <SVG name={"Edit"} width={25} height={23} fill={"#FFF"} />
             </span>
             <span
               onClick={() => router.push(`/ads/${ad.id}/delete`)}
               className="hover:cursor-pointer"
             >
-              <SVG name={"Delete"} width={30} height={30} fill={"#000"} />
+              <SVG name={"Delete"} width={30} height={30} fill={"#FFF"} />
             </span>
           </div>
         </div>

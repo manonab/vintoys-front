@@ -1,8 +1,10 @@
 import React from "react";
-import Text, { Align, Font } from "@common/text";
+import Text, { Font } from "@common/text";
 import { Container } from "@common/container";
+import { useRouter } from "next/router";
 
 const Banner = () => {
+  const router = useRouter();
   return (
     <Container className="z-0 h-[250px] md:h-[430px] w-full md:w-[1224px] flex items-center mx-auto mt-10 justify-center bg-cover bg-center bg-banner opacity-75 rounded rounded-2xl">
       <Container className="w-full md:ml-20 md:h-2/4 flex flex-col items-start">
@@ -13,7 +15,9 @@ const Banner = () => {
           color={"text-white md:text-left text-center"}
         />
         <Container className="md:ml-0 bg-black rounded rounded-[6px] md:py-[14px] md:px-[24px] p-[8px]">
-          <p className="text-white">Start to sell</p>
+          <p className="text-white" onClick={() => router.push("/catalog/ads/post-ads")}>
+            Start to sell
+          </p>
         </Container>
       </Container>
     </Container>

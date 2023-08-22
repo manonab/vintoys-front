@@ -47,8 +47,8 @@ const Encart = () => {
         <p className="text-[40px] text-black font-Capuch text-center relative md:bottom-[380px]">
           {t("Lorem ipsum dolor sit amet consectetur.")}
         </p>
-        <button className=" bg-yellowCapiche text-black px-4 py-2 rounded relative md:bottom-[350px] ml-[550px] font-inter">
-          {t("Start to Sell")}
+        <button className=" bg-yellowCapiche text-black px-4 py-2 rounded relative md:bottom-[350px] ml-[550px] font-inter hover:cursor-pointer">
+          Start to Sell
         </button>
       </Container>
     </Container>
