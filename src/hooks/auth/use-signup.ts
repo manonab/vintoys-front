@@ -15,6 +15,7 @@ export const useSignUp = (): SignUpResult => {
   const [error, setError] = useState<string | null>(null);
   const { updateAuthentication } = useAuth();
   const router = useRouter();
+  
   const signup = async (params: SignUpParams): Promise<AuthPayload | undefined> => {
     setIsLoading(true);
     try {

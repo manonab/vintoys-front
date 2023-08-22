@@ -1,54 +1,96 @@
-import Button from "@common/button";
-import { Container } from "@common/container";
-import ImageUploader from "@common/image-uploader";
-import Text, { Size } from "@common/text";
-import Title from "@common/title";
-import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
 
-const PostAds: React.FC = () => {
-  const [adTitle, setAdTitle] = useState("");
-  const [images, setImages] = useState<File[]>([]);
-  const router = useRouter();
+import { usePostAds } from "@hooks/ads/post/use-create-ads";
+//values .json
 
-  const handleContinue = () => {
-    if (adTitle.length > 1) {
-      router.push({
-        pathname: "/ads/create-next",
-        query: { title: adTitle, images: images.map((image) => image.name) },
-      });
+import Step1 from "@components/create-ads/step-1";
+import Step2 from "@components/create-ads/step-2";
+import Step3 from "@components/create-ads/step-3";
+export interface FormDataAds {
+  title: string;
+  category: number;
+  description: string;
+  location: string;
+  price: number;
+  sub_category: number;
+  brand: string;
+  state: number;
+  images: File[];
+  status: number;
+  age_range: number;
+}
+
+const CreateAdForm: React.FC = () => {
+  const methods = useForm<FormDataAds>();
+  const {
+    handleSubmit,
+    formState: { errors },
+  } = methods;
+  const { postAd } = usePostAds();
+  const [previewImages, setPreviewImages] = useState<string[]>([]);
+
+  const [currentStep, setCurrentStep] = useState<number>(1);
+  const [selectedCategory, setSelectedCategory] = useState<number>();
+  const [selectedState, setSelectedState] = useState<number>();
+  const [selectedSubCategory, setSelectedSubCategory] = useState<number>();
+
+  const onSubmit: SubmitHandler<FormDataAds> = async (data) => {
+    if (currentStep === 3) {
+      try {
+        console.log(data);
+        await postAd(data);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      setCurrentStep(currentStep + 1);
+    }
+  };
+
+  const renderStep = () => {
+    switch (currentStep) {
+      case 1:
+        return (
+          <Step1
+            selectedCategory={selectedCategory}
+            selectedSubCategory={selectedSubCategory}
+            setSelectedCategory={setSelectedCategory}
+            setSelectedSubCategory={setSelectedSubCategory}
+            setCurrentStep={setCurrentStep}
+            methods={methods}
+          />
+        );
+      case 2:
+        return (
+          <Step2
+            methods={methods}
+            selectedState={selectedState}
+            setSelectedState={setSelectedState}
+            setCurrentStep={setCurrentStep}
+          />
+        );
+      case 3:
+        return (
+          <Step3
+            previewImages={previewImages}
+            setPreviewImages={setPreviewImages}
+            setCurrentStep={setCurrentStep}
+            methods={methods}
+          />
+        );
+      default:
+        return null;
     }
   };
 
   return (
-    <Container>
-      <Title
-        text="Let's start with the basics!"
-        level={4}
-        className="text-left m-5 text-vintoys"
-      />
-      <Container>
-        <Text text="What is the title of your ad ?" size={Size.XSMall} className="mx-5" />
-        <Container>
-          <input
-            className="w-1/3 border p-2 m-5 rounded rounded-1xl"
-            value={adTitle}
-            onChange={(e) => setAdTitle(e.target.value)}
-          />
-          <Button
-            isPost={false}
-            text="Continue"
-            onClick={handleContinue}
-            disabled={!adTitle}
-            className="border bg-turquoise p-2 rounded rounded-1xl text-white font-montserratLight"
-          />
-        </Container>
-      </Container>
-      <Container>
-        <ImageUploader images={images} setImages={setImages} />
-      </Container>
-    </Container>
+    <FormProvider {...methods}>
+      <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto p-6">
+        {renderStep()}
+      </form>
+    </FormProvider>
   );
 };
 
-export default PostAds;
+export default CreateAdForm;

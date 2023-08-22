@@ -9,14 +9,13 @@ export const State = [
 ];
 
 export const Adstate = [
-  { id: 1, state: "Pending Approval" },
-  { id: 2, state: "Published" },
-  { id: 3, state: "Pending Payment" },
-  { id: 4, state: "Transaction in Progress" },
-  { id: 5, state: "Shipping in Progress:" },
-  { id: 6, state: "Completed" },
-  { id: 7, state: "Cancelled" },
+  { id: 1, state: "Published" },
+  { id: 2, state: "Pending Payment" },
+  { id: 3, state: "Transaction in Progress" },
+  { id: 4, state: "Shipping in Progress:" },
+  { id: 5, state: "Completed" },
+  { id: 6, state: "Cancelled" },
   { id: 7, state: "Expired" },
-  { id: 7, state: "Suspended or Deactivated" },
-  { id: 7, state: "Under Modification:" },
+  { id: 8, state: "Suspended or Deactivated" },
+  { id: 9, state: "Under Modification:" },
 ];

@@ -1,34 +1,10 @@
 export const childrenGames = [
       {
-       id: 1,
-       age:"Infants 0-12 months",
-       games:[{
-        id:1,
-        category: "Rattles and Hanging Toys"
-      },
-      {
-        id:2,
-        category: "Soft and Textured Books"
-      },
-      {
-        id:3,
-        category: "Soothing Musical Toys"
-      },
-      {
-        id:4,
-        category: "Teething Rings for Relief"
-      },
-      {
-        id:5,
-        category: "Tactile and Sensory Toys"
-      },
-    ]},
-      {
       id: 2,
       age:"Toddlers 1-3 years",
       games:[{
         id:1,
-        category: "Building Blocks and Stacking Toys"
+        category: "Building Blocks and Stacking Toys",
       },
       {
         id:2,
