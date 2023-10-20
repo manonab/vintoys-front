@@ -78,7 +78,7 @@ const SVG: FunctionComponent<Props> = ({ name, width, height, fill, url }: Props
       </svg>
     );
   }
-  return <Svg width={width} height={height} fill={fill} />;
+  return <Svg />;
 };
 
 export default SVG;

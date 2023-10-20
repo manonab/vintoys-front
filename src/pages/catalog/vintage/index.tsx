@@ -29,7 +29,7 @@ const VintageAds: React.FC = () => {
       <div className="flex flex-wrap flex-row w-full justify-center">
         {ads.map((ad) => (
           <AdsCards
-            state={ad?.state}
+            state={1}
             title={ad?.title}
             brand={ad?.brand}
             description={ad?.description}
@@ -39,7 +39,7 @@ const VintageAds: React.FC = () => {
             thumbnail_url={ad.thumbnail_url}
             time_ago={ad.time_ago}
             category={ad.category}
-            seller_username={ad.seller_username}
+            username={ad.username}
           />
         ))}
       </div>

@@ -5,15 +5,15 @@ export const useDeleteFavorite = () => {
   const { user_token } = useAuth();
   const token = user_token ?? "";
 
-  const deleteFavorite = async (adId: number) => {
-    try {
-      await auth.deleteFavorite(token, adId);
-    } catch (error) {
-      console.error("Error deleting favorite:", error);
-    }
-  };
+  // const deleteFavorite = async (adId: number) => {
+  //   try {
+  //     await auth.deleteFavorite(token, adId);
+  //   } catch (error) {
+  //     console.error("Error deleting favorite:", error);
+  //   }
+  // };
 
-  return {
-    deleteFavorite,
-  };
+  // return {
+  //   deleteFavorite,
+  // };
 };
