@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Button from "@common/button";
 import { useRouter } from "next/router";
 import { useSignUp } from "@hooks/auth/use-signup";
-import { Container } from "@common/container";
 
 const SignUp: React.FC = () => {
   const router = useRouter();
@@ -23,8 +21,8 @@ const SignUp: React.FC = () => {
   };
 
   return (
-    <Container className="justify-items-center">
-      <Container className="w-full max-h-screen flex flex-col w-2/4 mx-auto mt-20">
+    <div className="justify-items-center">
+      <div className="w-full max-h-screen flex flex-col w-2/4 mx-auto mt-20">
         <h2 className="text-center text-Large text-black font-Capuch my-5">
           Create your account!
         </h2>
@@ -64,14 +62,14 @@ const SignUp: React.FC = () => {
           value={street}
           onChange={(e) => setStreet(e.target.value)}
         />
-        <Container
+        <div
           onClick={handleAuthentification}
           className="hover:cursor-pointer bg-black font-baumans w-auto mx-auto mt-10 capitalize w-3/4 border rounded px-20 py-2 rounded-[10px]"
         >
           <p className="text-white">Create</p>
-        </Container>
+        </div>
 
-        <Container className="flex mx-auto py-5 mb-10">
+        <div className="flex mx-auto py-5 mb-10">
           <p className="px-2 font-baumans">Have already an account?</p>
           <span
             onClick={() => router.push("/account/sign-in")}
@@ -79,9 +77,9 @@ const SignUp: React.FC = () => {
           >
             <p className="font-baumans font-bold">Sign in!</p>
           </span>
-        </Container>
-      </Container>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };
 

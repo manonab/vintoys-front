@@ -1,4 +1,3 @@
-import { Container } from "@common/container";
 import React from "react";
 import SubCategorySelector from "@components/create-ads/handle-subCategory";
 import CategorySelector from "@components/create-ads/handle-category";
@@ -27,7 +26,7 @@ const Step1: React.FC<StepProps> = ({
   };
 
   return (
-    <Container className="flex flex-col w-full h-full">
+    <div className="flex flex-col w-full h-full">
       <h3 className="font-Capuch mt-3">Title</h3>
       <input
         {...methods.register("title")}
@@ -60,7 +59,7 @@ const Step1: React.FC<StepProps> = ({
       >
         Suivant
       </button>
-    </Container>
+    </div>
   );
 };
 

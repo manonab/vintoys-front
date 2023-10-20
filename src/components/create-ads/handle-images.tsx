@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "@common/container";
 
 interface ImageProps {
   setPreviewImages: React.Dispatch<React.SetStateAction<string[]>>;
@@ -29,7 +28,7 @@ const HandleImages: React.FC<ImageProps> = ({
   };
 
   return (
-    <Container>
+    <div>
       <h3 className="font-Capuch my-3">Images</h3>
       <input
         type="file"
@@ -38,7 +37,7 @@ const HandleImages: React.FC<ImageProps> = ({
         multiple
         onChange={handleImageChange}
       />
-    </Container>
+    </div>
   );
 };
 

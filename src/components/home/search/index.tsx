@@ -1,4 +1,3 @@
-import { Container } from "@common/container";
 import SVG from "@common/svg";
 import React, { useState } from "react";
 
@@ -19,8 +18,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <Container className="flex items-center w-3/4 mx-auto my-5 border-[2px] rounded rounded-[6px] border-[#AAAAAA] md:px-4 focus-within:border-blue-500 md:w-1/3 bg-[#F5F5F5]">
-      <Container className="relative flex items-center">
+    <div className="flex items-center w-3/4 mx-auto my-5 border-[2px] rounded rounded-[6px] border-[#AAAAAA] md:px-4 focus-within:border-blue-500 md:w-1/3 bg-[#F5F5F5]">
+      <div className="relative flex items-center">
         <SVG
           name="Search"
           width={24}
@@ -34,8 +33,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           value={searchTerm}
           onChange={handleSearch}
         />
-      </Container>
-    </Container>
+      </div>
+    </div>
   );
 };
 

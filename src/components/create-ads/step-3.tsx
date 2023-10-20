@@ -1,7 +1,5 @@
 import React from "react";
-import { Container } from "@common/container";
 import HandleImages from "@components/create-ads/handle-images";
-import { Adstate } from "public/static/data/state";
 
 interface StepProps {
   setCurrentStep: (step: number) => void;
@@ -17,8 +15,8 @@ const Step3: React.FC<StepProps> = ({
   previewImages,
 }: StepProps) => {
   return (
-    <Container className="flex flex-col w-full h-full">
-      <Container className="flex flex-col w-full">
+    <div className="flex flex-col w-full h-full">
+      <div className="flex flex-col w-full">
         <HandleImages
           methods={methods}
           setPreviewImages={setPreviewImages}
@@ -32,7 +30,7 @@ const Step3: React.FC<StepProps> = ({
             valueAsNumber: true,
           })}
         />
-        <Container className="flex flex-row  justify-evenly w-auto">
+        <div className="flex flex-row  justify-evenly w-auto">
           {previewImages.map((imageUrl, index) => (
             <img
               key={index}
@@ -41,9 +39,9 @@ const Step3: React.FC<StepProps> = ({
               className="my-2 mx-2 max-h-32"
             />
           ))}
-        </Container>
-      </Container>
-      <Container className="flex flex-col w-full">
+        </div>
+      </div>
+      <div className="flex flex-col w-full">
         <button
           type="button"
           onClick={() => setCurrentStep(2)}
@@ -57,8 +55,8 @@ const Step3: React.FC<StepProps> = ({
         >
           Valider
         </button>
-      </Container>
-    </Container>
+      </div>
+    </div>
   );
 };
 

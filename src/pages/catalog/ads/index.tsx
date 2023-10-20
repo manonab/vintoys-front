@@ -1,7 +1,6 @@
 import React from "react";
 import { useGetAds } from "@hooks/ads/get/use-get-ads";
 
-import { Container } from "@common/container";
 import Title from "@common/title";
 import AdsCards from "@common/card";
 
@@ -19,15 +18,15 @@ const Ads: React.FC = () => {
   }
 
   return (
-    <Container className="my-10">
-      <Container className="text-center mt-8">
+    <div className="my-10">
+      <div className="text-center mt-8">
         <Title
           text="The fresh news"
           className="md:my-10 md:mx-20 my-2 mx-2 text-text text-left font-inter"
           level={4}
         />
-      </Container>
-      <Container className="flex flex-wrap flex-row w-full justify-center">
+      </div>
+      <div className="flex flex-wrap flex-row w-full justify-center">
         {ads.map((ad) => (
           <AdsCards
             state={ad?.state}
@@ -43,8 +42,8 @@ const Ads: React.FC = () => {
             username={ad.username}
           />
         ))}
-      </Container>
-    </Container>
+      </div>
+    </div>
   );
 };
 

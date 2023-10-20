@@ -5,7 +5,7 @@ import { useAuth } from "@context/auth-context";
 import { useSignIn } from "@hooks/auth/use-signin";
 
 const SignIn = () => {
-  const { updateAuthentication, isAuthenticated } = useAuth();
+  const { updateAuthentication } = useAuth();
   const { signIn } = useSignIn();
   const router = useRouter();
   const [email, setEmail] = useState<string>("");

@@ -1,4 +1,3 @@
-import { Container } from "@common/container";
 import React from "react";
 
 interface CategoryProps {
@@ -31,10 +30,10 @@ const CategoryCard: React.FC<CategoryProps> = ({
     >
       {!isDouble && <img src={image} className={` object-cover relative ${imgStyle}`} />}
       {isDouble && (
-        <Container className="flex flex-col">
+        <div className="flex flex-col">
           <img src={image} className={` object-cover relative ${imgStyle}`} />
           <img src={image} className={` object-cover relative ${imgStyle}`} />
-        </Container>
+        </div>
       )}
       <a
         href={href}
