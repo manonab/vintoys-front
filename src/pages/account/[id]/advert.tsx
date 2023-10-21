@@ -17,10 +17,11 @@ const MyAds: React.FC = () => {
     return <div>Error occurred while fetching ads.</div>;
   }
 
+  console.log(adsData);
   return (
     <div className="flex w-full flex-wrap md:flex-row flex-col justify-around md:my-20 my-16 items-center">
-      {adsData?.map((ad) => (
-        <div className="md:block items-end  justify-evenly flex w-full bg-yellowCapiche rounded text-white p-4 rounded-2xl shadow-xl my-5">
+      {adsData?.map((ad, index) => (
+        <div key={index} className="md:block items-end  justify-evenly flex w-full bg-yellowCapiche rounded text-white p-4 rounded-2xl shadow-xl my-5">
           <img
             src={ad.thumbnail_url}
             className="rounded rounded-2xl mb-5 w-2/4 md:w-auto"
