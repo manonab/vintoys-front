@@ -2,7 +2,7 @@ import React from "react";
 import { Ads } from "@models/ad";
 import Text, { Align, Font, LineHeight, Weight } from "@common/text";
 import { useRouter } from "next/router";
-import FavoriteButton from "@components/favorite";
+// import FavoriteButton from "@components/favorite";
 
 type Ad = Ads;
 
@@ -28,9 +28,9 @@ const AdsCards: React.FC<Ad> = ({
         onClick={handleViewDetails}
         className="hover:cursor-pointer flex flex-wrap flex-col my-2 mx-4 rounded rounded-[2px] w-[240px] h-[328px] bg-[#F5F5F5] right-7 bottom-2 relative"
       >
-        <div className="flex flex-row justify-end items-center my-4 mx-2">
+        {/* <div className="flex flex-row justify-end items-center my-4 mx-2">
           <FavoriteButton adId={id} />
-        </div>
+        </div> */}
 
         <img
           src={thumbnail_url}
