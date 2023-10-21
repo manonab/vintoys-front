@@ -1,12 +1,15 @@
 import { fetcher } from "@helpers/Ifetcher";
 import { FormDataAds } from "@pages/catalog/ads/post-ads";
 
+const API_URL = process.env.API_URL;
+
 export const ads = {
-  getAllAds: () => `http://localhost:3001/ads`,
-  getAllVintage: () => `http://localhost:3001/ads/vintage`,
-  getAllAdult: () => `http://localhost:3001/ads/adult`,
-  getAllChildren: () => `http://localhost:3001/ads/children`,
-  getAdsWithID: (adId: number) => `http://localhost:3001/ads/${adId}`,
-  getMyAds: () => `http://localhost:3001/my_ads`,
-  postAds: (data: FormDataAds, user_token: string) => fetcher(`http://localhost:3001/ads`, {data, method: "POST"}, user_token)
+  getAllAds: () => `${API_URL}/ads`,
+  getAllVintage: () => `${API_URL}/ads/vintage`,
+  getAllAdult: () => `${API_URL}/ads/adult`,
+  getAllChildren: () => `${API_URL}/ads/children`,
+  getAdsWithID: (adId: number) => `${API_URL}/ads/${adId}`,
+  getMyAds: () => `${API_URL}/my_ads`,
+  postAds: (data: FormDataAds, user_token: string) =>
+    fetcher(`${API_URL}/ads`, { data, method: "POST" }, user_token),
 };
