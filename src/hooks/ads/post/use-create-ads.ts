@@ -3,7 +3,7 @@ import { useAuth } from "@context/auth-context";
 import { AuthPayload } from "@models/auth";
 import { FormDataAds } from "@pages/catalog/ads/post-ads";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import { useState } from "react";
 import { mutate } from "swr";
 
 export const usePostAds= () => {

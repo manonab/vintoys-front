@@ -21,7 +21,6 @@ const AdsCards: React.FC<Ad> = ({
       router.push(`/catalog/ads/${id}`);
     }
   };
-
   return (
     <div className="flex flex-wrap flex-col my-2 mx-4 rounded rounded-[2px] w-[240px] h-[343px] bg-yellowCapiche bg-opacity-25">
       <div
@@ -31,11 +30,10 @@ const AdsCards: React.FC<Ad> = ({
         {/* <div className="flex flex-row justify-end items-center my-4 mx-2">
           <FavoriteButton adId={id} />
         </div> */}
-
         <img
           src={thumbnail_url}
           alt="Ad Image"
-          className="w-[90%] h-32 object-cover m-4 mx-auto"
+          className="w-[90%] rounded-xl self-center h-32 object-cover m-4 mx-auto"
         />
         <div className="flex flex-col items-start m-3">
           <Text

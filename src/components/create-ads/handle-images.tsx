@@ -10,20 +10,42 @@ const HandleImages: React.FC<ImageProps> = ({
   setPreviewImages,
   methods,
 }: ImageProps) => {
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+
+  const handleImageChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (files) {
-      const imageFiles: File[] = [];
+      const imageArray: { type: string, name: string, base64: string }[] = [];
       const imageUrls: string[] = [];
+      const promises: Promise<void>[] = [];
+
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
-        const imageUrl = URL.createObjectURL(file);
-        imageUrls.push(imageUrl);
-        imageFiles.push(file);
+        const reader = new FileReader();
+
+        const promise = new Promise<void>((resolve) => {
+          reader.onload = (e) => {
+            if (e.target) {
+              const base64Data = e.target.result as string;
+              const imageObject = {
+                type: file.type,
+                name: file.name,
+                base64: base64Data,
+              };
+              imageArray.push(imageObject);
+              resolve();
+            }
+          };
+        });
+
+        promises.push(promise);
+        imageUrls.push(URL.createObjectURL(file));
+        reader.readAsDataURL(file);
       }
+
+      await Promise.all(promises);
+
       setPreviewImages(imageUrls);
-      const imageObjects = imageUrls.map((url) => ({ url }));
-      methods.setValue("images", imageObjects);
+      methods.setValue("images", imageArray);
     }
   };
 
@@ -36,6 +58,7 @@ const HandleImages: React.FC<ImageProps> = ({
         accept="image/*"
         multiple
         onChange={handleImageChange}
+
       />
     </div>
   );
