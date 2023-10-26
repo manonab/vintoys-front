@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
 
 import { usePostAds } from "@hooks/ads/post/use-create-ads";
-//values .json
 
 import Step1 from "@components/create-ads/step-1";
 import Step2 from "@components/create-ads/step-2";
@@ -38,7 +37,6 @@ const CreateAdForm: React.FC = () => {
   const onSubmit: SubmitHandler<FormDataAds> = async (data) => {
     if (currentStep === 3) {
       try {
-        console.log(data);
         await postAd(data);
       } catch (error) {
         console.log(error);

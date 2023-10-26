@@ -1,10 +1,9 @@
-import { Container } from "@common/container";
 import React from "react";
 
 const AboutPage = () => {
   return (
-    <Container className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
-      <Container className="max-w-7xl mx-auto">
+    <div className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
+      <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-extrabold text-gray-800 mb-8 font-Capuch">
           Welcome to Capiche - Where Vintage Meets Fun!
         </h1>
@@ -59,8 +58,8 @@ const AboutPage = () => {
         <p className="text-lg text-gray-600 mb-6 text-bold font-baumans">
           Yours playfully, Manon - Chief Toy Hunter @ Capiche 🧭🧸
         </p>
-      </Container>
-    </Container>
+      </div>
+    </div>
   );
 };
 

@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "@common/container";
 import { categories } from "public/static/data/category";
 
 interface HandleCategoryProps {
@@ -18,7 +17,7 @@ const HandleCategory: React.FC<HandleCategoryProps> = ({
     setSelectedSubCategory(undefined);
   };
   return (
-    <Container className="flex flex-col w-full h-full">
+    <div className="flex flex-col w-full h-full">
       <h3 className="font-Capuch my-3 mt-5">Category</h3>
       <select
         value={selectedCategory}
@@ -32,7 +31,7 @@ const HandleCategory: React.FC<HandleCategoryProps> = ({
           </option>
         ))}
       </select>
-    </Container>
+    </div>
   );
 };
 

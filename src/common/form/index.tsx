@@ -1,7 +1,5 @@
 import React from "react";
-import Button from "@common/button";
 import { useRouter } from "next/router";
-import { Container } from "@common/container";
 
 interface Props {
   email: string;
@@ -21,8 +19,8 @@ const Form: React.FC<Props> = ({
   const router = useRouter();
 
   return (
-    <Container className="justify-items-center">
-      <Container className="w-full max-h-screen flex flex-col w-2/4 mx-auto mt-20">
+    <div className="justify-items-center">
+      <div className="w-full max-h-screen flex flex-col w-2/4 mx-auto mt-20">
         <h2 className="text-center text-Large text-black font-Capuch my-5">
           Sign in to your account
         </h2>
@@ -39,13 +37,13 @@ const Form: React.FC<Props> = ({
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Container
+        <div
           onClick={handleAuthentification}
           className="hover:cursor-pointer bg-black font-baumans w-auto mx-auto mt-10 capitalize w-3/4 border rounded px-20 py-2"
         >
           <p className="capitalize text-white">Login</p>
-        </Container>
-        <Container className="flex mx-auto py-5">
+        </div>
+        <div className="flex mx-auto py-5">
           <p className="px-2 font-baumans">Don't have an account?</p>
           <span
             onClick={() => router.push("/account/sign-up")}
@@ -53,9 +51,9 @@ const Form: React.FC<Props> = ({
           >
             <p className="font-baumans font-bold">Create one!</p>
           </span>
-        </Container>
-      </Container>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -2,7 +2,6 @@ import React from "react";
 import { useRouter } from "next/router";
 import { useAuth } from "@context/auth-context";
 
-import { Container } from "@common/container";
 import AccountCard from "@common/card/account-cards";
 import ProfilCard from "@common/card/profil-card";
 
@@ -11,9 +10,9 @@ const UserAccount: React.FC = () => {
   const { user_id, user_name } = useAuth();
 
   return (
-    <Container>
+    <div>
       <ProfilCard user_id={user_id} user_name={user_name} />
-      <Container className="flex flex-wrap md:flex-row w-3/4">
+      <div className="flex flex-wrap md:flex-row w-3/4">
         <AccountCard
           title="Adverts"
           description="Manage my ads"
@@ -34,8 +33,8 @@ const UserAccount: React.FC = () => {
           description="All my favorite ads saved here"
           onClick={() => router.push(`/account/${user_id}/favorite`)}
         />
-      </Container>
-    </Container>
+      </div>
+    </div>
   );
 };
 

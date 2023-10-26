@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "@common/container";
 import { age as AgeRange, subCategories } from "public/static/data/category";
 
 interface SubCategorySelectorProps {
@@ -40,7 +39,7 @@ const HandleSubCategory: React.FC<SubCategorySelectorProps> = ({
   };
 
   return (
-    <Container className="flex flex-col w-full h-full">
+    <div className="flex flex-col w-full h-full">
       {selectedCategory === 1 && (
         <>
           <h3 className="font-Capuch my-3">Age Range</h3>
@@ -106,7 +105,7 @@ const HandleSubCategory: React.FC<SubCategorySelectorProps> = ({
           />
         </>
       )}
-    </Container>
+    </div>
   );
 };
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { NextPage } from "next";
 
-import { Container } from "@common/container";
 import Bar from "@common/bar";
 
 import Banner from "@components/home/banner";
@@ -16,7 +15,7 @@ const Home: NextPage = () => {
   const isMobile = useIsMobile();
 
   return (
-    <Container>
+    <div>
       <SearchBar onSearch={() => console.log("coucou")} />
       <Banner />
       <Bar />
@@ -24,7 +23,7 @@ const Home: NextPage = () => {
       <TopAds />
       {!isMobile && <Encart />}
       <Ads />
-    </Container>
+    </div>
   );
 };
 export default Home;

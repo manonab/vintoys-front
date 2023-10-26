@@ -12,7 +12,7 @@ const CreateNext: React.FC = () => {
   };
 
   const imageList = Array.isArray(images) ? images : [images];
-  const baseUrl = "http://localhost:3001/";
+  const baseUrl = `${process.env.API_URL}`
 
   const categories = ["Vintage", "Toys", "Games"];
 

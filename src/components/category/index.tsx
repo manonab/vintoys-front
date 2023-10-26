@@ -1,5 +1,4 @@
 import CategoryCard from "@common/card/category-card";
-import { Container } from "@common/container";
 import Title from "@common/title";
 import React from "react";
 
@@ -41,13 +40,13 @@ const categories = [
 
 const Categories: React.FC = () => {
   return (
-    <Container>
+    <div>
       <Title
         text="Recherche par categorie"
         className="md:my-10 my-5 mx-3 md:mx-20 text-left font-inter text-text"
         level={4}
       />
-      <Container className="hover:cursor-pointer hover:transform flex md:flex-row flex-col justify-center mx-auto items-center w-auto">
+      <div className="hover:cursor-pointer hover:transform flex md:flex-row flex-col justify-center mx-auto items-center w-auto">
         {categories.map((category) => (
           <CategoryCard
             isDouble={category.isDouble}
@@ -62,8 +61,8 @@ const Categories: React.FC = () => {
             titleStyle={category.titleStyle}
           />
         ))}
-      </Container>
-    </Container>
+      </div>
+    </div>
   );
 };
 

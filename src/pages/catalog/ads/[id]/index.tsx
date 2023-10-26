@@ -1,5 +1,4 @@
 import Button from "@common/button";
-import { Container } from "@common/container";
 import Text, { Align, Size, Weight } from "@common/text";
 import Title from "@common/title";
 import { useGetAdsWithId } from "@hooks/ads/get/use-ads-id";
@@ -17,8 +16,8 @@ const AdDetailsPage: React.FC = () => {
       ) : isError ? (
         <p>Error occurred while fetching ad details</p>
       ) : ad ? (
-        <Container className="flex md:flex-row flex-col align-center items-baseline md:my-20">
-          <Container className="flex flex-col mt-10">
+            <div className="flex md:flex-row flex-col align-center items-baseline md:my-20">
+              <div className="flex flex-col mt-10">
             <img
               src={ad.thumbnail_url}
               alt="Ad Image"
@@ -40,22 +39,22 @@ const AdDetailsPage: React.FC = () => {
               textAlign={Align.Right}
               className="m-3 font-bold"
             />
-          </Container>
-          <Container className="flex md:flex-col md:justify-evenly justify-center md:border rounded md:rounded-2xl md:h-[200px] md:w-[200px] h-10 md:p-5 md:mt-20 mt-10 mb-5 w-3/4 items-center ">
-            <Container>
+              </div>
+              <div className="flex md:flex-col md:justify-evenly justify-center md:border rounded md:rounded-2xl md:h-[200px] md:w-[200px] h-10 md:p-5 md:mt-20 mt-10 mb-5 w-3/4 items-center ">
+                <div>
               <Text
                 text={`@${ad.username}`}
                 className="font-bold font-inter"
                 size={Size.XSMall}
               />
-            </Container>
+                </div>
             <Button
               text="Send a message"
               className="bg-yellowCapiche text-inter text-white"
               onClick={() => console.log("couc")}
             />
-          </Container>
-        </Container>
+              </div>
+            </div>
       ) : (
         <p>No ad found</p>
       )}

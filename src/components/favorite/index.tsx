@@ -11,7 +11,7 @@ interface Props {
 
 const FavoriteButton: React.FC<Props> = ({ adId, initialIsFavorite = false }) => {
   const [isFavorite, setIsFavorite] = useState<boolean>(initialIsFavorite);
-  const { deleteFavorite } = useDeleteFavorite();
+  // const { deleteFavorite } = useDeleteFavorite();
   const { addFavorite } = useAddFavorite();
   const { favoriteAdIds, isLoading } = useGetMyFav();
 
@@ -23,7 +23,7 @@ const FavoriteButton: React.FC<Props> = ({ adId, initialIsFavorite = false }) =>
     if (!isLoading && adId) {
       setIsFavorite((prevFavorite) => !prevFavorite);
       if (isFavorite) {
-        await deleteFavorite(adId); // Assuming deleteFavorite is an async function, use await here
+        // await deleteFavorite(adId); // Assuming deleteFavorite is an async function, use await here
       } else {
         // Call the addFavorite hook and update the state with the response data
         const response = await addFavorite(adId);
