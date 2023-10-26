@@ -10,7 +10,7 @@ const HandleImages: React.FC<ImageProps> = ({
   setPreviewImages,
   methods,
 }: ImageProps) => {
-
+  const MAX_FILE_SIZE = 5 * 1024 * 1024;
   const handleImageChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (files) {
@@ -21,7 +21,10 @@ const HandleImages: React.FC<ImageProps> = ({
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
         const reader = new FileReader();
-
+        if (file.size > MAX_FILE_SIZE) {
+          alert(`Le fichier ${file.name} est trop volumineux. La taille maximale autorisée est ${MAX_FILE_SIZE / (1024 * 1024)} MB.`);
+          continue;
+        }
         const promise = new Promise<void>((resolve) => {
           reader.onload = (e) => {
             if (e.target) {
