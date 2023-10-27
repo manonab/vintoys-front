@@ -21,7 +21,7 @@ const AdDetailsPage: React.FC = () => {
             <img
               src={ad.thumbnail_url}
               alt="Ad Image"
-              className="w-full h-[280px] object-cover my-4 rounded rounded-1xl"
+                  className="mx-auto w-full h-auto object-cover my-4 rounded rounded-1xl"
             />
             <Title level={3} text={ad.title} className="m-2 font-Capuch" />
             <Text size={Size.XSMall} text={ad.description} className="m-2 font-inter" />
