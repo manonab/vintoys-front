@@ -41,17 +41,17 @@ const Step3: React.FC<StepProps> = ({
           ))}
         </div>
       </div>
-      <div className="flex flex-col w-full">
+      <div className="flex md:flex-col w-full mx-auto">
         <button
           type="button"
           onClick={() => setCurrentStep(2)}
-          className="bg-yellowCapiche mx-16 my-10 w-1/2 mx-auto p-2 rounded-lg text-white"
+          className="mx-1 bg-yellowCapiche md:mx-16 my-10 w-1/2 mx-auto p-2 rounded-lg text-white"
         >
           Précédent
         </button>
         <button
           type="submit"
-          className="bg-yellowCapiche my-10 w-1/2 mx-auto p-2 rounded-lg text-white"
+          className="mx-1 bg-yellowCapiche my-10 w-1/2 mx-auto p-2 rounded-lg text-white"
         >
           Valider
         </button>

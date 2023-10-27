@@ -12,6 +12,7 @@ const HandleSubCategory: React.FC<SubCategorySelectorProps> = ({
   selectedSubCategory,
   methods,
 }: SubCategorySelectorProps) => {
+
   const [age, setAge] = useState<number | undefined>();
   const [filteredSubCategories, setFilteredSubCategories] = useState(subCategories);
 
@@ -56,7 +57,7 @@ const HandleSubCategory: React.FC<SubCategorySelectorProps> = ({
 
       {selectedCategory === 1 && filteredSubCategories.length > 0 && (
         <>
-          <h3 className="font-Capuch mt-4 mb-3">Sub Category</h3>
+          <h3 className="font-Capuch mt-4 mb-3">Sous-catégorie</h3>
           <select
             value={selectedSubCategory}
             className="md:w-3/4 p-2 w-full"
@@ -65,7 +66,7 @@ const HandleSubCategory: React.FC<SubCategorySelectorProps> = ({
               valueAsNumber: true,
             })}
           >
-            <option value="">Select Sub Category</option>
+            <option value="">Séléctionne une sous-catégorie</option>
             {filteredSubCategories.map((subCategory) => (
               <option key={subCategory.id} value={subCategory.id}>
                 {subCategory.category}
@@ -77,7 +78,7 @@ const HandleSubCategory: React.FC<SubCategorySelectorProps> = ({
 
       {selectedCategory !== 1 && (
         <>
-          <h3 className="font-Capuch mt-4 mb-3">Sub Category</h3>
+          <h3 className="font-Capuch mt-4 mb-3">Sous catégorie</h3>
           <select
             value={selectedSubCategory}
             className="md:w-3/4 p-2 w-full"
@@ -86,7 +87,7 @@ const HandleSubCategory: React.FC<SubCategorySelectorProps> = ({
               valueAsNumber: true,
             })}
           >
-            <option>Select Sub Category</option>
+            <option>Séléctionne une sous catégorie</option>
             {subCategories
               .filter((subCategory) => subCategory.parentCategory === selectedCategory)
               .map((subCategory) => (

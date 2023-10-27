@@ -10,27 +10,44 @@ const SignIn = () => {
   const router = useRouter();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const handleAuthentification = async () => {
     try {
+      setError("");
+      if (!email || !password) {
+        setError("Veuillez remplir tous les champs.");
+        return;
+      }
       const resp = await signIn({ email, password });
       if (resp?.status === 200) {
         updateAuthentication(true, resp?.data?.user_token);
         router.push("/account");
       }
+      console.log(resp?.data)
     } catch (err) {
       console.error("Erreur lors de la connexion :", err);
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
-    <Form
-      email={email}
-      setEmail={setEmail}
-      password={password}
-      setPassword={setPassword}
-      handleAuthentification={handleAuthentification}
-    />
+    <div>
+      <Form
+        email={email}
+        setEmail={setEmail}
+        password={password}
+        setPassword={setPassword}
+        handleAuthentification={handleAuthentification}
+        error={error}
+        showPassword={showPassword}
+        togglePasswordVisibility={togglePasswordVisibility}
+      />
+    </div>
   );
 };
 

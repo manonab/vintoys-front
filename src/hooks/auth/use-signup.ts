@@ -15,19 +15,18 @@ export const useSignUp = (): SignUpResult => {
   const [error, setError] = useState<string | null>(null);
   const { updateAuthentication } = useAuth();
   const router = useRouter();
-  
+
   const signup = async (params: SignUpParams): Promise<AuthPayload | undefined> => {
     setIsLoading(true);
     try {
       const resp = await auth.signUp(params);
       if (resp?.status === 200) {
-        updateAuthentication(true, resp?.data.user_token);
-        router.push("/account/signin");
+        updateAuthentication(false, resp?.data.user_token);
+        router.push("/account");
       }
       return undefined;
     } catch (err: any) {
-      console.error("Error:", err);
-      setError(err);
+      setError(err.message);
       return undefined;
     } finally {
       setIsLoading(false);

@@ -25,29 +25,29 @@ const AdDetailsPage: React.FC = () => {
             />
             <Title level={3} text={ad.title} className="m-2 font-Capuch" />
             <Text size={Size.XSMall} text={ad.description} className="m-2 font-inter" />
-            <Text
-              size={Size.XSMall}
-              text={ad.state}
-              textAlign={Align.Right}
-              className="m-3 font-inter"
-            />
-            {/* <Text size={Size.XSMall} text={"location"} className="m-2" /> */}
-            <Text
-              size={Size.XSMall}
-              fontWeight={Weight.ExtraBold}
-              text={`${ad.price}€`}
-              textAlign={Align.Right}
-              className="m-3 font-bold"
-            />
-              </div>
-              <div className="flex md:flex-col md:justify-evenly justify-center md:border rounded md:rounded-2xl md:h-[200px] md:w-[200px] h-10 md:p-5 md:mt-20 mt-10 mb-5 w-3/4 items-center ">
-                <div>
-              <Text
-                text={`@${ad.username}`}
-                className="font-bold font-inter"
-                size={Size.XSMall}
-              />
+                <div className="flex">
+                  <Text
+                    size={Size.XSMall}
+                    text={ad.state}
+                    textAlign={Align.Right}
+                    className="m-3 font-inter"
+                  />
+                  {/* <Text size={Size.XSMall} text={"location"} className="m-2" /> */}
+                  <Text
+                    size={Size.XSMall}
+                    fontWeight={Weight.ExtraBold}
+                    text={`${ad.price}€`}
+                    textAlign={Align.Right}
+                    className="m-3 font-bold"
+                  />
                 </div>
+              </div>
+              <div className="flex md:flex-col md:justify-evenly justify-evenly md:border rounded md:rounded-2xl md:h-[200px] md:w-[200px] h-10 md:p-5 md:mt-20 mt-10 mb-5 w-full md:w-3/4 items-center ">
+                <Text
+                  text={`@${ad.username}`}
+                  className="font-bold font-Capuch text-black"
+                  size={Size.Small}
+                />
             <Button
               text="Send a message"
               className="bg-yellowCapiche text-inter text-white"

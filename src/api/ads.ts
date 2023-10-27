@@ -2,7 +2,6 @@ import { fetcher } from "@helpers/Ifetcher";
 import { FormDataAds } from "@pages/catalog/ads/post-ads";
 
 const API_URL = process.env.API_URL;
-console.log(API_URL, "api url");
 
 export const ads = {
   getAllAds: () => `${API_URL}/ads`,

@@ -13,11 +13,6 @@ const ProtectedRoute = ({ children }: any) => {
     return null;
   }
 
-  // if (id !== user?.id) {
-  //   router.push("/account");
-  //   return null;
-  // }
-
   return <>{children}</>;
 };
 

@@ -25,14 +25,27 @@ const Header: React.FunctionComponent = () => {
       }
     };
 
-    window.addEventListener("click", handleClickOutside);
-    return () => {
-      window.removeEventListener("click", handleClickOutside);
+    const handleDocumentClick = (event: MouseEvent) => {
+      // Fermer le sidebar lorsqu'on clique en dehors de celui-ci
+      if (sidebarOpen) {
+        const sidebar = document.querySelector(".sidebar");
+        if (sidebar && !sidebar.contains(event.target as Node)) {
+          closeSidebar();
+        }
+      }
     };
-  }, []);
+
+    // Ajouter le gestionnaire d'événements pour fermer le sidebar lorsqu'on clique en dehors
+    document.addEventListener("click", handleDocumentClick);
+
+    // Nettoyer les gestionnaires d'événements lorsqu'on les composants sont démontés
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, [sidebarOpen]);
 
   return (
-    <header className="flex flex-row bg-mainColor shadow-lg w-full border-b border-bottom-3 border-black items-center justify-between py-4">
+    <header className="flex flex-row bg-mainColor shadow-lg border-b border-bottom-3 border-black items-center justify-between py-4">
       <div className="md:grow md:w-1/4 md:ml-5" onClick={toggleSidebar}>
         <SVG width={40} height={40} name="Home" />
       </div>
@@ -59,7 +72,7 @@ const Header: React.FunctionComponent = () => {
           <SVG width={50} height={30} name="Alien" />
         </span>
       </div>
-      {sidebarOpen && <SidebarMenu onClose={closeSidebar} />}
+      {/* {sidebarOpen && <SidebarMenu onClose={closeSidebar} />} */}
     </header>
   );
 };

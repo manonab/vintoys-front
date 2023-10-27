@@ -15,7 +15,7 @@ const Home: NextPage = () => {
   const isMobile = useIsMobile();
 
   return (
-    <div>
+    <div className="w-screen">
       <SearchBar onSearch={() => console.log("coucou")} />
       <Banner />
       <Bar />

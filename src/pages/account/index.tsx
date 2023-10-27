@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuth } from "@context/auth-context";
 import UserAccount from "@components/account";
 import SignIn from "./sign-in";
 
 const Account = () => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isLoading } = useAuth();
 
-  if (!isAuthenticated) {
-    return <SignIn />;
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
 
-  return <UserAccount />;
+  if (isAuthenticated) {
+    return <UserAccount />;
+  } else {
+    return <SignIn />;
+  }
 };
 
 export default Account;

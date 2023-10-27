@@ -8,6 +8,7 @@ interface AuthContextType {
   user_name: string | null;
   user_token: string | null;
   updateAuthentication: (authenticated: boolean, user_token?: string) => void;
+  isLoading: boolean;
 }
 
 export const AuthContext = createContext<AuthContextType>({
@@ -16,6 +17,7 @@ export const AuthContext = createContext<AuthContextType>({
   isAuthenticated: false,
   user_token: null,
   updateAuthentication: () => {},
+  isLoading: false,
 });
 
 export const useAuth = () => useContext(AuthContext);
@@ -25,6 +27,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user_id, setUser_id] = useState<number | null>(null);
   const [user_name, setUser_name] = useState<string | null>(null);
   const [user_token, setUser_token] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const userToken = Cookies.get("user_token");
@@ -35,6 +38,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setUser_name(decodedToken.user_name);
       setUser_token(userToken);
     }
+    setIsLoading(false); 
   }, []);
 
   useEffect(() => {
@@ -65,7 +69,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, updateAuthentication, user_id, user_name, user_token }}
+      value={{ isLoading, isAuthenticated, updateAuthentication, user_id, user_name, user_token }}
     >
       {children}
     </AuthContext.Provider>

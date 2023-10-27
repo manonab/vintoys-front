@@ -24,15 +24,12 @@ export const useSignIn = (): SignInResult => {
       const resp = await auth.signIn(params);
       if (resp?.status === 200) {
         updateAuthentication(true, resp?.data.user_token);
+      } else {
+        setError(`${resp?.data.message}`)
       }
-      return undefined;
-    } catch (err: any) {
-      console.error("Error:", err);
-      setError(err);
       return undefined;
     } finally {
       setIsLoading(false);
-      console.log("Finished");
     }
   };
 
