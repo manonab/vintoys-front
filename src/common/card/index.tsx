@@ -14,7 +14,7 @@ const AdsCards: React.FC<Ad> = ({
   id,
   thumbnail_url,
   username,
-  time_ago
+  time_ago,
 }: Ad) => {
   const router = useRouter();
 
@@ -25,18 +25,11 @@ const AdsCards: React.FC<Ad> = ({
   };
   return (
     <div className="flex flex-wrap flex-col my-2 mx-4 rounded rounded-[2px] w-[240px] h-[343px] bg-yellowCapiche bg-opacity-25">
-      <div
-        onClick={handleViewDetails}
-        className="hover:cursor-pointer flex flex-wrap flex-col my-2 mx-4 rounded rounded-[2px] w-[240px] h-[328px] bg-[#F5F5F5] right-7 bottom-2 relative"
-      >
+      <div onClick={handleViewDetails} className="hover:cursor-pointer flex flex-wrap flex-col my-2 mx-4 rounded rounded-[2px] w-[240px] h-[328px] bg-[#F5F5F5] right-7 bottom-2 relative">
         {/* <div className="flex flex-row justify-end items-center my-4 mx-2">
           <FavoriteButton adId={id} />
         </div> */}
-        <img
-          src={thumbnail_url}
-          alt="Ad Image"
-          className="w-[90%] rounded-xl self-center h-32 object-cover m-4 mx-auto"
-        />
+        <img src={thumbnail_url} alt="Ad Image" className="w-[90%] rounded-xl self-center h-32 object-cover m-4 mx-auto" />
         <div className="flex flex-col items-start m-3">
           <Text
             text={`${title}`}

@@ -22,7 +22,7 @@ export const useGetMyAds = () => {
   });
 
   return {
-    adsData: data?.data,
+    adsData: adsWithReadableStates,
     isLoading: !error && !data,
     isError: error,
   };

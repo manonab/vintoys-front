@@ -14,23 +14,23 @@ const UserAccount: React.FC = () => {
       <ProfilCard user_name={user_name} />
       <div className="mx-auto flex flex-wrap md:flex-row w-3/4">
         <AccountCard
-          title="Annonces"
-          description="Gérer mes annonces"
+          title="Adverts"
+          description="Manage my ads"
           onClick={() => router.push(`/account/${user_id}/advert`)}
         />
         <AccountCard
           title="Transactions"
-          description="Suivre mes ventes et mes achats"
+          description="track my purchases and sales"
           onClick={() => router.push(`/account/${user_id}/transfers`)}
         />
         <AccountCard
-          title="Paramètres"
-          description="Modifier ou compléter mes données personnelles"
+          title="Parameters"
+          description="Modify and complete my personnal datas"
           onClick={() => router.push(`/account/${user_id}/setting`)}
         />
         <AccountCard
-          title="Mes favorites"
-          description="Toutes mes annonces favorites enregistrées ici"
+          title="My favorites"
+          description="All my favorite ads saved here"
           onClick={() => router.push(`/account/${user_id}/favorite`)}
         />
       </div>

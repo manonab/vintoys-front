@@ -3,6 +3,7 @@ import SVG from "@common/svg";
 import { useRouter } from "next/router";
 import SidebarMenu from "./menu";
 import { useAuth } from "@context/auth-context";
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 const Header: React.FunctionComponent = () => {
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
@@ -47,15 +48,17 @@ const Header: React.FunctionComponent = () => {
   return (
     <header className="flex flex-row bg-mainColor shadow-lg border-b border-bottom-3 border-black items-center justify-between py-4">
       <div className="md:grow md:w-1/4 md:ml-5" onClick={toggleSidebar}>
-        <SVG width={40} height={40} name="Home" />
+        <SVG name="Home" />
       </div>
       <div
         className={`w-2/4 md:grow hover:cursor-pointer ${
           sidebarOpen ? "hidden md:block" : ""
-        } ${isAuthenticated && "md:ml-[270px]"}`}
+          } ${isAuthenticated && "md:ml-[270px]"}`}
         onClick={() => router.push("/")}
       >
-        <SVG width={240} height={40} name="Logo" />
+        <span className="flex justify-center items-center">
+          <SVG name="Logo" />
+        </span>
       </div>
       {!isAuthenticated && (
         <div className="md:w-auto md:mx-5 hidden md:block">
@@ -67,9 +70,12 @@ const Header: React.FunctionComponent = () => {
           </button>
         </div>
       )}
-      <div className="md:grow-0 md:mx-14">
+      <div className="md:grow-0 md:mx-14 flex">
+        <span>
+          <MailOutlineIcon sx={{ width: "24px", marginRight: "20px" }} />
+        </span>
         <span onClick={() => router.push("/account")} className="hover:cursor-pointer">
-          <SVG width={50} height={30} name="Alien" />
+          <SVG name="Alien" />
         </span>
       </div>
       {/* {sidebarOpen && <SidebarMenu onClose={closeSidebar} />} */}

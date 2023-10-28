@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import React, { createContext, useContext, useEffect, useState, ReactNode, SetStateAction } from "react";
 import Cookies from "js-cookie";
 import jwtDecode from "jwt-decode";
 
@@ -23,46 +23,68 @@ export const AuthContext = createContext<AuthContextType>({
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const [user_id, setUser_id] = useState<number | null>(null);
-  const [user_name, setUser_name] = useState<string | null>(null);
-  const [user_token, setUser_token] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [authState, setAuthState] = useState<AuthContextType>({
+    isAuthenticated: false,
+    user_id: null,
+    user_name: null,
+    user_token: null,
+    updateAuthentication: () => { },
+    isLoading: true,
+  });
 
   useEffect(() => {
-    const userToken = Cookies.get("user_token");
-    if (userToken) {
-      setIsAuthenticated(true);
-      const decodedToken = jwtDecode<{ user_id: number; user_name: string }>(userToken);
-      setUser_id(decodedToken.user_id);
-      setUser_name(decodedToken.user_name);
-      setUser_token(userToken);
+    if (typeof window !== 'undefined') {
+      const userToken = Cookies.get("user_token");
+      if (userToken) {
+        const decodedToken = jwtDecode<{ user_id: number; user_name: string }>(userToken);
+        setAuthState(prevState => ({
+          ...prevState,
+          isAuthenticated: true,
+          user_id: decodedToken.user_id,
+          user_name: decodedToken.user_name,
+          user_token: userToken,
+          isLoading: false,
+        }));
+      } else {
+        setAuthState(prevState => ({
+          ...prevState,
+          isAuthenticated: false,
+          user_id: null,
+          user_name: null,
+          user_token: null,
+          isLoading: false,
+        }));
+      }
     }
-    setIsLoading(false); 
-    console.log(userToken)
+    console.log(authState)
   }, []);
-
 
   const updateAuthentication = (authenticated: boolean, user_token?: string) => {
     if (!authenticated) {
       Cookies.remove("user_token");
-      setUser_id(null);
-      setUser_name(null);
-      setUser_token(null);
-      setIsAuthenticated(false);
+      setAuthState(prevState => ({
+        ...prevState,
+        isAuthenticated: false,
+        user_id: null,
+        user_name: null,
+        user_token: null,
+      }));
     } else if (user_token) {
       Cookies.set("user_token", user_token, { expires: 7 });
       const decodedToken = jwtDecode<{ user_id: number; user_name: string }>(user_token);
-      setUser_id(decodedToken.user_id);
-      setUser_name(decodedToken.user_name);
-      setUser_token(user_token);
-      setIsAuthenticated(true); 
+      setAuthState(prevState => ({
+        ...prevState,
+        isAuthenticated: true,
+        user_id: decodedToken.user_id,
+        user_name: decodedToken.user_name,
+        user_token: user_token,
+      }));
     }
   };
 
   return (
     <AuthContext.Provider
-      value={{ isLoading, isAuthenticated, updateAuthentication, user_id, user_name, user_token }}
+      value={{ ...authState, updateAuthentication }}
     >
       {children}
     </AuthContext.Provider>

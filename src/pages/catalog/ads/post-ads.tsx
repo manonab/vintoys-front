@@ -9,6 +9,7 @@ import Step3 from "@components/create-ads/step-3";
 import Spinner from "@common/spinner";
 import { useRouter } from "next/router";
 import { Finished } from "@components/finish";
+import { useAuth } from "@context/auth-context";
 export interface FormDataAds {
   title: string;
   category: number;
@@ -27,16 +28,15 @@ const CreateAdForm: React.FC = () => {
   const methods = useForm<FormDataAds>();
   const {
     handleSubmit,
-    formState: { errors },
   } = methods;
   const { postAd, isLoading, finished } = usePostAds();
-  const router = useRouter();
   const [previewImages, setPreviewImages] = useState<string[]>([]);
 
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [selectedCategory, setSelectedCategory] = useState<number>();
   const [selectedState, setSelectedState] = useState<number>();
   const [selectedSubCategory, setSelectedSubCategory] = useState<number>();
+  const { isAuthenticated, user_token } = useAuth();
 
   const onSubmit: SubmitHandler<FormDataAds> = async (data) => {
     if (currentStep === 3) {
@@ -92,7 +92,7 @@ const CreateAdForm: React.FC = () => {
         {renderStep()}
       </form>
       {isLoading && <Spinner />}
-      {finished && <Finished message="Congratulations! Your ad had been sucessfully created!" router="/account" />}
+      {finished && <Finished message="Great news! Your ad has been successfully published!" router="/account" />}
     </FormProvider>
   );
 };

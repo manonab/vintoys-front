@@ -10,6 +10,7 @@ export const ads = {
   getAllChildren: () => `${API_URL}/ads/children`,
   getAdsWithID: (adId: number) => `${API_URL}/ads/${adId}`,
   getMyAds: () => `${API_URL}/my_ads`,
+  deleteMyAd: (adID: number) => `${API_URL}/ads/${adID}`,
   postAds: (data: FormDataAds, user_token: string) =>
     fetcher(`${API_URL}/ads`, { data, method: "POST" }, user_token),
 };
