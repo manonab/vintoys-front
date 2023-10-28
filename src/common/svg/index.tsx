@@ -18,7 +18,7 @@ import Arrow from "@assets/icons/arrow.svg";
 import Teddy from "@assets/icons/ours.svg";
 import Card from "@assets/icons/cartes.svg";
 import GameBoy from "@assets/icons/gameboyy.svg";
-
+import DuckLogo from "@assets/icons/duck-logo.svg";
 interface Props {
   name: string | undefined;
   width?: number | "auto";
@@ -64,6 +64,8 @@ const pickIcon = (name: any) => {
       return Search;
     case "Arrow":
       return Arrow;
+    case "DuckLogo":
+      return DuckLogo;
     default:
       throw new Error("No Svg found!");
   }

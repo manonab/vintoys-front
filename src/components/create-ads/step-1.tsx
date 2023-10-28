@@ -27,26 +27,25 @@ const Step1: React.FC<StepProps> = ({
 
   return (
     <div className="flex flex-col w-full h-full">
-      <h3 className="font-Capuch mt-3">Titre</h3>
+      <h3 className="font-Capuch mt-3">Title</h3>
       <input
         {...methods.register("title")}
         className="my-3 font-inter p-1 md:w-3/4 w-full"
-        placeholder="Titre"
+        placeholder="Title"
         required
       />
       <h3 className="font-Capuch mt-3 mb-1">Description</h3>
-      <input
+      <textarea
         {...methods.register("description")}
-        className="mt-3 font-inter p-1 md:w-3/4 w-full"
+        className="mt-3 font-inter p-1 md:w-3/4 w-full resize-none h-[130px]"
         placeholder="Description"
         required
-      />
+      ></textarea>
       <CategorySelector
         setSelectedCategory={handleCategoryChange}
         setSelectedSubCategory={setSelectedSubCategory}
         selectedCategory={selectedCategory}
       />
-
       <SubCategorySelector
         methods={methods}
         selectedCategory={selectedCategory}
@@ -57,7 +56,7 @@ const Step1: React.FC<StepProps> = ({
         className="mx-auto bg-yellowCapiche my-10 w-1/2 md:mx-[55px] p-2 rounded-lg text-white"
         onClick={() => setCurrentStep(2)}
       >
-        Suivant
+        Next
       </button>
     </div>
   );

@@ -39,11 +39,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setUser_token(userToken);
     }
     setIsLoading(false); 
+    console.log(userToken)
   }, []);
 
-  useEffect(() => {
-    console.log("User ID and user name changed:", user_id, user_name);
-  }, [user_id, user_name]);
 
   const updateAuthentication = (authenticated: boolean, user_token?: string) => {
     if (!authenticated) {
@@ -51,20 +49,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setUser_id(null);
       setUser_name(null);
       setUser_token(null);
-    } else {
-      if (user_token) {
-        Cookies.set("user_token", user_token, { expires: 7 });
-        const decodedToken = jwtDecode<{
-          user_id: number;
-          user_name: string;
-          user_token: string;
-        }>(user_token);
-        setUser_id(decodedToken.user_id);
-        setUser_name(decodedToken.user_name);
-        setUser_token(user_token);
-      }
+      setIsAuthenticated(false);
+    } else if (user_token) {
+      Cookies.set("user_token", user_token, { expires: 7 });
+      const decodedToken = jwtDecode<{ user_id: number; user_name: string }>(user_token);
+      setUser_id(decodedToken.user_id);
+      setUser_name(decodedToken.user_name);
+      setUser_token(user_token);
+      setIsAuthenticated(true); 
     }
-    setIsAuthenticated(authenticated);
   };
 
   return (

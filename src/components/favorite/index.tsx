@@ -38,9 +38,9 @@ const FavoriteButton: React.FC<Props> = ({ adId, initialIsFavorite = false }) =>
   return (
     <div onClick={handleFavorite}>
       {isFavorite ? (
-        <SVG width={18} height={18} name="HeartFilled" />
+        <SVG className="w-12" name="HeartFilled" />
       ) : (
-        <SVG width={18} height={18} name="Heart" />
+          <SVG className="w-12" name="Heart" />
       )}
     </div>
   );

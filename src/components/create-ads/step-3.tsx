@@ -47,13 +47,13 @@ const Step3: React.FC<StepProps> = ({
           onClick={() => setCurrentStep(2)}
           className="mx-1 bg-yellowCapiche md:mx-16 my-10 w-1/2 mx-auto p-2 rounded-lg text-white"
         >
-          Précédent
+          Previous
         </button>
         <button
           type="submit"
           className="mx-1 bg-yellowCapiche my-10 w-1/2 mx-auto p-2 rounded-lg text-white"
         >
-          Valider
+          Next
         </button>
       </div>
     </div>

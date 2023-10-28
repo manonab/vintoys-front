@@ -41,7 +41,7 @@ const HandleSubCategory: React.FC<SubCategorySelectorProps> = ({
 
   return (
     <div className="flex flex-col w-full h-full">
-      {selectedCategory === 1 && (
+      {selectedCategory === 2 && (
         <>
           <h3 className="font-Capuch my-3">Age Range</h3>
           <select value={age} onChange={handleAgeChange} className="md:w-3/4 p-2 w-full">
@@ -55,9 +55,9 @@ const HandleSubCategory: React.FC<SubCategorySelectorProps> = ({
         </>
       )}
 
-      {selectedCategory === 1 && filteredSubCategories.length > 0 && (
+      {selectedCategory === 2 && filteredSubCategories.length > 0 && (
         <>
-          <h3 className="font-Capuch mt-4 mb-3">Sous-catégorie</h3>
+          <h3 className="font-Capuch mt-4 mb-3">Sub category</h3>
           <select
             value={selectedSubCategory}
             className="md:w-3/4 p-2 w-full"
@@ -66,7 +66,7 @@ const HandleSubCategory: React.FC<SubCategorySelectorProps> = ({
               valueAsNumber: true,
             })}
           >
-            <option value="">Séléctionne une sous-catégorie</option>
+            <option value="">Sub category</option>
             {filteredSubCategories.map((subCategory) => (
               <option key={subCategory.id} value={subCategory.id}>
                 {subCategory.category}
@@ -76,9 +76,9 @@ const HandleSubCategory: React.FC<SubCategorySelectorProps> = ({
         </>
       )}
 
-      {selectedCategory !== 1 && (
+      {selectedCategory !== 2 && (
         <>
-          <h3 className="font-Capuch mt-4 mb-3">Sous catégorie</h3>
+          <h3 className="font-Capuch mt-4 mb-3">Sub category</h3>
           <select
             value={selectedSubCategory}
             className="md:w-3/4 p-2 w-full"
@@ -87,7 +87,7 @@ const HandleSubCategory: React.FC<SubCategorySelectorProps> = ({
               valueAsNumber: true,
             })}
           >
-            <option>Séléctionne une sous catégorie</option>
+            <option>Sub category</option>
             {subCategories
               .filter((subCategory) => subCategory.parentCategory === selectedCategory)
               .map((subCategory) => (

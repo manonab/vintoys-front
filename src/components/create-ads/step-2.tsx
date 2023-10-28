@@ -17,7 +17,7 @@ const Step2: React.FC<StepProps> = ({
   return (
     <div>
       <div className="flex flex-col w-full h-full">
-        <h3 className="font-Capuch my-2">Prix</h3>
+        <h3 className="font-Capuch my-2">Price</h3>
         <input
           className="my-3 font-inter p-1 md:w-3/4 w-full"
           {...methods.register("price", {
@@ -27,13 +27,13 @@ const Step2: React.FC<StepProps> = ({
             max: 10000,
           })}
           required
-          placeholder="Prix"
+          placeholder="Price"
         />
-        <h3 className="font-Capuch my-2">Marque</h3>
+        <h3 className="font-Capuch my-2">Brand</h3>
         <input
           className="my-3 font-inter p-1 md:w-3/4 w-full"
           {...methods.register("brand")}
-          placeholder="Marque"
+          placeholder="Brand"
         />
         <h3 className="font-Capuch my-2">Localisation</h3>
         <input
@@ -41,17 +41,17 @@ const Step2: React.FC<StepProps> = ({
           {...methods.register("location")}
           placeholder="Localisation"
         />
-        <h3 className="font-Capuch my-2">État</h3>
+        <h3 className="font-Capuch my-2">State</h3>
         <select
           value={selectedState}
-          onChange={(e) => setSelectedState(parseInt(e.target.value))} // Mise à jour de l'état ici
+          onChange={(e) => setSelectedState(parseInt(e.target.value))}
           className="md:w-3/4 p-2 w-full"
           {...methods.register("state", {
             required: true,
             valueAsNumber: true,
           })}
         >
-          <option value="">Séléctione un état</option>
+          <option value="">Select state</option>
           {State.map((state) => (
             <option key={state.id} value={state.id}>
               {state.state}
@@ -65,14 +65,14 @@ const Step2: React.FC<StepProps> = ({
           onClick={() => setCurrentStep(1)}
           className="bg-yellowCapiche w-1/2 p-2 rounded-lg text-white md:-ml-12"
         >
-          Précédent
+          Previous
         </button>
         <button
           type="button"
           onClick={() => setCurrentStep(3)}
           className="bg-yellowCapiche w-1/2 p-2 rounded-lg text-white md:mr-10"
         >
-          Suivant
+          Next
         </button>
       </div>
     </div>

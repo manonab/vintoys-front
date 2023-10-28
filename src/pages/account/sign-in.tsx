@@ -17,7 +17,7 @@ const SignIn = () => {
     try {
       setError("");
       if (!email || !password) {
-        setError("Veuillez remplir tous les champs.");
+        setError("Please fill all the requires values");
         return;
       }
       const resp = await signIn({ email, password });
@@ -25,7 +25,6 @@ const SignIn = () => {
         updateAuthentication(true, resp?.data?.user_token);
         router.push("/account");
       }
-      console.log(resp?.data)
     } catch (err) {
       console.error("Erreur lors de la connexion :", err);
     }

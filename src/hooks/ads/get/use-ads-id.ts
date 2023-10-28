@@ -10,9 +10,10 @@ export const useGetAdsWithId = (adId: number) => {
   const adWithReadableState = data
     ? {
         ...data,
-        state: State.find((state) => state.id === data.state)?.state || "Unknown",
+        state: State.find((state) => state.id === data.state)?.state,
       }
     : undefined;
+
   return {
     ad: adWithReadableState,
     isLoading: !error && !data,

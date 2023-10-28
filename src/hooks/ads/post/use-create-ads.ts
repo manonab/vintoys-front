@@ -2,34 +2,32 @@ import { ads } from "@api/ads";
 import { useAuth } from "@context/auth-context";
 import { AuthPayload } from "@models/auth";
 import { FormDataAds } from "@pages/catalog/ads/post-ads";
-import { useRouter } from "next/router";
 import { useState } from "react";
 import { mutate } from "swr";
 
-export const usePostAds= () => {
+export const usePostAds = () => {
   const { user_token } = useAuth();
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
-  const router = useRouter();
   const token = user_token || "";
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [finished, setFinished] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const postAd = async (params: FormDataAds): Promise<AuthPayload | undefined>  => {
+  const postAd = async (params: FormDataAds): Promise<AuthPayload | undefined> => {
     setIsLoading(true);
     try {
       const response = await ads.postAds(params, token);
-      if (response?.status === 201) {
+      if (response?.status === 201 || response?.status === 200) {
         mutate("/ads");
-        router.push("/")
+        setIsLoading(false);
+        setFinished(true);
       }
       return undefined;
-    } catch (error :any) {
-      console.error('Error', error);
+    } catch (error: any) {
       setError(error);
       return undefined;
     } finally {
-      setIsLoading(false);
       console.log("Finished");
     }
   };
-  return {error, isLoading, postAd};
+  return { error, isLoading, postAd, finished };
 };

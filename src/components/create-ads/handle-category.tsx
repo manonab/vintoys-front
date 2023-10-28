@@ -20,13 +20,13 @@ const HandleCategory: React.FC<HandleCategoryProps> = ({
 
   return (
     <div className="flex flex-col w-full h-full">
-      <h3 className="font-Capuch my-3 mt-5">Categories</h3>
+      <h3 className="font-Capuch my-3 mt-5">Category</h3>
       <select
         value={selectedCategory}
         onChange={(e) => handleCategoryChange(Number(e.target.value))}
         className="md:w-3/4 p-2 w-full"
       >
-        <option>Séléctionne une catégorie</option>
+        <option>Select category</option>
         {categories.map((option: any) => (
           <option key={option.id} value={option.id} className="w-full">
             {option.category}

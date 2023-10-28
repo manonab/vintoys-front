@@ -6,6 +6,9 @@ import { usePostAds } from "@hooks/ads/post/use-create-ads";
 import Step1 from "@components/create-ads/step-1";
 import Step2 from "@components/create-ads/step-2";
 import Step3 from "@components/create-ads/step-3";
+import Spinner from "@common/spinner";
+import { useRouter } from "next/router";
+import { Finished } from "@components/finish";
 export interface FormDataAds {
   title: string;
   category: number;
@@ -26,7 +29,8 @@ const CreateAdForm: React.FC = () => {
     handleSubmit,
     formState: { errors },
   } = methods;
-  const { postAd } = usePostAds();
+  const { postAd, isLoading, finished } = usePostAds();
+  const router = useRouter();
   const [previewImages, setPreviewImages] = useState<string[]>([]);
 
   const [currentStep, setCurrentStep] = useState<number>(1);
@@ -87,6 +91,8 @@ const CreateAdForm: React.FC = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto p-6">
         {renderStep()}
       </form>
+      {isLoading && <Spinner />}
+      {finished && <Finished message="Congratulations! Your ad had been sucessfully created!" router="/account" />}
     </FormProvider>
   );
 };

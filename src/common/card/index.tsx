@@ -2,6 +2,7 @@ import React from "react";
 import { Ads } from "@models/ad";
 import Text, { Align, Font, LineHeight, Weight } from "@common/text";
 import { useRouter } from "next/router";
+import FavoriteButton from "@components/favorite";
 // import FavoriteButton from "@components/favorite";
 
 type Ad = Ads;
@@ -13,6 +14,7 @@ const AdsCards: React.FC<Ad> = ({
   id,
   thumbnail_url,
   username,
+  time_ago
 }: Ad) => {
   const router = useRouter();
 
@@ -44,13 +46,21 @@ const AdsCards: React.FC<Ad> = ({
             lineHeight={LineHeight.Inter}
             className="text-[15px] capitalize"
           />
-          <Text
-            text={`@${username}`}
-            textAlign={Align.Left}
-            fontWeight={Weight.Light}
-            lineHeight={LineHeight.Inter}
-            className="text-[8px]"
-          />
+          <span className="w-full flex items-center justify-between">
+            <Text
+              text={`@${username}`}
+              textAlign={Align.Left}
+              fontWeight={Weight.Light}
+              lineHeight={LineHeight.Inter}
+              className="text-[8px] mt-2"
+            />
+            <Text
+              text={`${time_ago}`}
+              fontWeight={Weight.Light}
+              lineHeight={LineHeight.Inter}
+              className="text-[8px] italic"
+            />
+          </span>
           <Text
             text={`${price}€`}
             textAlign={Align.Left}

@@ -37,7 +37,7 @@ const SignUp: React.FC = () => {
     <div className="justify-items-center">
       <div className="w-full max-h-screen flex flex-col w-2/4 mx-auto mt-20">
         <h2 className="text-center text-Large text-black font-Capuch my-5">
-          Créer ton compte!
+          Create your account!
         </h2>
         <input
           className="w-3/4 border md:w-1/4 p-2 my-3	border-1 rounded border-dotted mx-auto font-baumans"
@@ -54,7 +54,7 @@ const SignUp: React.FC = () => {
         <div className="relative w-3/4 mx-auto my-3">
           <input
             className="w-full border p-2 rounded border-dotted font-baumans"
-            placeholder="Mot de passe"
+            placeholder="Password"
             type={showPassword ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -68,13 +68,13 @@ const SignUp: React.FC = () => {
         </div>
         <input
           className="w-3/4 border md:w-1/4 p-2 my-3	border-1 rounded border-dotted mx-auto font-baumans"
-          placeholder="Code postal"
+          placeholder="Postal Code"
           value={postalCode}
           onChange={(e) => setPostalCode(e.target.value)}
         />
         <input
           className="w-3/4 border md:w-1/4 p-2	my-3 border-1 rounded border-dotted mx-auto font-baumans"
-          placeholder="Ville"
+          placeholder="City"
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />

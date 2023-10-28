@@ -5,7 +5,6 @@ import React, { useEffect } from "react";
 
 const MyAds: React.FC = () => {
   const { adsData, isLoading, isError } = useGetMyAds();
-  const router = useRouter();
 
   useEffect(() => {}, [adsData]);
 
@@ -26,10 +25,10 @@ const MyAds: React.FC = () => {
             className="rounded rounded-2xl mb-5 w-2/4 mx-auto w-full md:w-auto self-center"
           />
           <span className="flex items-center justify-evenly w-full">
-            <p className="text-Medium text-left md:pb-2 font-semibold text-black font-Capuch mr-5">{ad.title}</p>
-
-            <p className="font-bold text-black">{ad.price}€</p>
+            <p className="text-Medium text-left md:pb-2 font-semibold text-white font-Capuch mr-5">{ad.title}</p>
+            <p className="font-bold text-white">{ad.price}€</p>
           </span>
+          <p className="ml-8 italic">{ad?.time_ago}</p>
           {/* <div className="flex justify-end items-center pt-5">
             <span
               onClick={() => router.push(`/ads/${ad.id}/edit`)}

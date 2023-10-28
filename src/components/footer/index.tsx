@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
           </div>
           <Text
             color="text-white"
-            text={`© ${new Date().getFullYear()} Vintoys. All rights reserved.`}
+            text={`© ${new Date().getFullYear()} Capiche. All rights reserved.`}
             textAlign={Align.Center}
             size={Size.XSMall}
           />

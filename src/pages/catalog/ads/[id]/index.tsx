@@ -9,6 +9,7 @@ const AdDetailsPage: React.FC = () => {
   const router = useRouter();
   const { id } = router.query;
   const { ad, isLoading, isError } = useGetAdsWithId(Number(id));
+
   return (
     <div>
       {isLoading ? (
@@ -18,27 +19,26 @@ const AdDetailsPage: React.FC = () => {
       ) : ad ? (
             <div className="flex md:flex-row flex-col align-center items-baseline md:my-20">
               <div className="flex flex-col mt-10">
-            <img
-              src={ad.thumbnail_url}
-              alt="Ad Image"
-                  className="mx-auto w-full h-auto object-cover my-4 rounded rounded-1xl"
-            />
-            <Title level={3} text={ad.title} className="m-2 font-Capuch" />
+                <img src={ad.thumbnail_url} alt="Ad Image" className="mx-auto w-full h-auto object-cover my-4 rounded rounded-1xl" />
+                <div className="flex justify-between items-center">
+                  <Title level={3} text={ad.title} className="m-2 font-Capuch" />
+                  <p className="font-inter italic text-black mr-2">{ad.time_ago}</p>
+                </div>
             <Text size={Size.XSMall} text={ad.description} className="m-2 font-inter" />
-                <div className="flex">
+                <div className="flex justify-between items-center mt-5">
                   <Text
                     size={Size.XSMall}
-                    text={ad.state}
+                    text={`${ad.state}`}
                     textAlign={Align.Right}
                     className="m-3 font-inter"
                   />
-                  {/* <Text size={Size.XSMall} text={"location"} className="m-2" /> */}
+                  <Text size={Size.XSMall} text={`${ad.location}`} className="font-inter" />
                   <Text
                     size={Size.XSMall}
                     fontWeight={Weight.ExtraBold}
                     text={`${ad.price}€`}
                     textAlign={Align.Right}
-                    className="m-3 font-bold"
+                    className="m-3 font-interBold"
                   />
                 </div>
               </div>

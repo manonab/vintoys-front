@@ -16,14 +16,14 @@ const AccountCard: React.FC<Props> = ({ title, description, onClick }: Props) =>
         text={`${title}`}
         size={Size.Medium}
         fontFamily={Font.Capuch}
-        className="mt-6 mx-4 text-black"
+        className="mt-6 mx-4 text-white"
         textAlign={Align.Left}
       />
       <Text
         text={`${description}`}
         size={Size.XSMall}
         textAlign={Align.Left}
-        className="mx-4 mt-6 text-footerColor"
+        className="mx-4 mt-6 text-white"
       />
     </div>
   );
