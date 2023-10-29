@@ -12,4 +12,6 @@ export const auth = {
   getFavorites: () => `${API_URL}/favorites`,
   postFavorite: (data: Favorite, user_token: string) =>
     fetcher(`${API_URL}/favorites`, { data, method: "POST" }, user_token),
+  refreshToken: (user_id: number) =>
+    fetcher(`${API_URL}/refresh`, { method: "POST", data: user_id }),
 };

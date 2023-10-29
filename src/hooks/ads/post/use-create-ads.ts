@@ -1,5 +1,6 @@
 import { ads } from "@api/ads";
 import { useAuth } from "@context/auth-context";
+import { isTokenExpired } from "@context/expired-token";
 import { AuthPayload } from "@models/auth";
 import { FormDataAds } from "@pages/catalog/ads/post-ads";
 import { useState } from "react";
@@ -15,6 +16,11 @@ export const usePostAds = () => {
   const postAd = async (params: FormDataAds): Promise<AuthPayload | undefined> => {
     setIsLoading(true);
     try {
+      // if(isTokenExpired(`${user_token}`)){
+      //   try {
+      //     const
+      //   }
+      // }
       const response = await ads.postAds(params, token);
       if (response?.status === 201 || response?.status === 200) {
         mutate("/ads");

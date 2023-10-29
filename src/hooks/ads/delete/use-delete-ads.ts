@@ -1,6 +1,7 @@
 import { ads } from "@api/ads";
 import { useAuth } from "@context/auth-context";
-import React, { useState } from "react";
+import { fetcher } from "@helpers/Ifetcher";
+import { useState } from "react";
 
 export const useDeleteAds = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -13,18 +14,17 @@ export const useDeleteAds = () => {
     setError(null);
     setSuccess(false);
     try {
-      const response = await fetch(ads.deleteMyAd(adID), {
-        method: "DELETE",
-        headers: {
-          Authorization: `${user_token}`,
-        },
-      });
-      if (!response.ok) {
-        const data = await response.json();
-        setError(data.message);
+      if (user_token !== null) {
+        const response = await ads.deleteMyAd(adID, user_token);
+        if (!response.ok) {
+          const data = await response.json();
+          setError(data.message);
+        } else {
+          setSuccess(true);
+          console.log("well done, ton ad a été deleted");
+        }
       } else {
-        setSuccess(true);
-        console.log("well done, ton ad a été deleted");
+        setError("User token is null.");
       }
     } catch (err) {
       setError("Une erreur s'est produite lors de la suppression de l'annonce.");

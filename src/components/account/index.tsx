@@ -7,8 +7,8 @@ import ProfilCard from "@common/card/profil-card";
 
 const UserAccount: React.FC = () => {
   const router = useRouter();
-  const { user_id, user_name } = useAuth();
-
+  const { user_id, user_name, user_token, isAuthenticated } = useAuth();
+  console.log(user_token, isAuthenticated)
   return (
     <div className="mx-auto">
       <ProfilCard user_name={user_name} />

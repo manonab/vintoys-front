@@ -16,7 +16,7 @@ export const AuthContext = createContext<AuthContextType>({
   user_id: null,
   isAuthenticated: false,
   user_token: null,
-  updateAuthentication: () => {},
+  updateAuthentication: () => { },
   isLoading: false,
 });
 
@@ -72,6 +72,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     } else if (user_token) {
       Cookies.set("user_token", user_token, { expires: 7 });
       const decodedToken = jwtDecode<{ user_id: number; user_name: string }>(user_token);
+
       setAuthState(prevState => ({
         ...prevState,
         isAuthenticated: true,
